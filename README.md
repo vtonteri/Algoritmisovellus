@@ -24,6 +24,8 @@ Ohjelma on testattu ja toiminta varmistettu Python 3.9.7 -versiolla. Aiempien ve
 
 **[Viikkoraportti 1](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/viikkoraportti1.md)**
 
+**[Viikkoraportti 2](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/viikkoraportti2.md)**
+
 # **Ohjelma käyttöohje**
 
 ## **Asennus**
