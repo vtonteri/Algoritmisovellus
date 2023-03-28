@@ -1,7 +1,11 @@
 class TrieSolmu:
     def __init__(self):
         self.lapsi = {}
+        self.maara = 0
         self.on_viimeinen = False
+    
+    def __str__(self):
+        return str(self.lapsi.keys())
 
 
 class TrieRakenne:
@@ -14,6 +18,7 @@ class TrieRakenne:
             if nuotti not in solmu.lapsi:
                 solmu.lapsi[nuotti] = TrieSolmu()
             solmu = solmu.lapsi[nuotti]
+            solmu.maara += 1
         solmu.on_viimeinen = True 
 
     def etsi_nuotit(self, etsittavat_nuotit: str) -> bool:
@@ -22,6 +27,22 @@ class TrieRakenne:
             if nuotti not in solmu.lapsi:
                 return False
             solmu = solmu.lapsi[nuotti]
-        return solmu.on_viimeinen
+            print(f"{solmu} tämä on nuotti: {nuotti}")
+        return solmu.on_viimeinen, solmu.maara
     
-    
+
+if __name__ == '__main__':
+    nuotit = "kala"
+    liaa = "mies"
+    f = "kalamies"
+    s = "mieskala"
+    t = "kalakala"
+    x = TrieRakenne()
+
+    x.lisaa_nuotit(nuotit)
+    x.lisaa_nuotit(liaa)
+    x.lisaa_nuotit(f)
+    x.lisaa_nuotit(s)
+    x.lisaa_nuotit(t)
+
+    print(x.etsi_nuotit("kala"))

@@ -15,6 +15,10 @@
     - Data Analysis with Python
     - Machine learning algorithms : popular algorithms for data science and machine learning
     - Advanced machine learning with Python : solve challenging data science problems by mastering cutting-edge machine learning techniques in Python
+    - https://en.wikipedia.org/wiki/Algorithmic_composition
+    - https://en.wikipedia.org/wiki/Markov_chain
+    - https://abcnotation.com/
+    
 
 - Opinto-ohjelma: tietojenkäsittelytieteen kandidaatin ohjelma (TKT)
 
