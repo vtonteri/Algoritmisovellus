@@ -36,5 +36,5 @@ Kumulatiivinen työajan seuranta:
 | --- | --- | --- |
 | 1 | 8 | Projektin alustaminen, tietorakenteen koodaus |
 | 2 | 8 | Muuntimen pseudokoodin rakentaminen, Import-ongelman selvittely |
-| 3 | 2 | Import-ongelman ratkaisu |
+| 3 | 4 | Import-ongelman ratkaisu, Trie-rakenteen kehitys |
 | Yht | 18 |  |

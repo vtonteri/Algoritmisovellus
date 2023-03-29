@@ -19,16 +19,26 @@ class TrieRakenne:
                 solmu.lapsi[nuotti] = TrieSolmu()
             solmu = solmu.lapsi[nuotti]
             solmu.maara += 1
+            #solmu[1] += 1
+            #solmu[nuotti][1] += 1
         solmu.on_viimeinen = True 
 
     def etsi_nuotit(self, etsittavat_nuotit: str) -> bool:
         solmu = self.juuri
+        summa = 0
+        
+
+        for key in solmu.lapsi:
+            print(solmu.lapsi[key].maara)
+
+
         for nuotti in etsittavat_nuotit:
             if nuotti not in solmu.lapsi:
-                return False
+                return False            
             solmu = solmu.lapsi[nuotti]
-            print(f"{solmu} tämä on nuotti: {nuotti}")
-        return solmu.on_viimeinen, solmu.maara
+            print(f"{solmu} tämä on nuotti: {nuotti} {solmu.maara}")
+
+        return solmu.on_viimeinen, solmu.maara, solmu.lapsi.keys()
     
 
 if __name__ == '__main__':
@@ -37,6 +47,7 @@ if __name__ == '__main__':
     f = "kalamies"
     s = "mieskala"
     t = "kalakala"
+    y = "kalatyyppi"
     x = TrieRakenne()
 
     x.lisaa_nuotit(nuotit)
@@ -44,5 +55,6 @@ if __name__ == '__main__':
     x.lisaa_nuotit(f)
     x.lisaa_nuotit(s)
     x.lisaa_nuotit(t)
+    x.lisaa_nuotit(y)
 
-    print(x.etsi_nuotit("kala"))
+    print(x.etsi_nuotit("tyyppi"))
