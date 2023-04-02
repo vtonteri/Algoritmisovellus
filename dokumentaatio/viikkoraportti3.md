@@ -15,6 +15,7 @@
 ## Mitä opin tällä viikolla / tänään?
 
 - Import-ongelman ratkaisu
+    - Omiin moduuleihin viittaaminen Pythonissa toteutetaan viittaamalla esim *from src.entities.trie_rakenne import TrieRakenne*
 - Trie-rakenteen ymmärtäminen syvällisesti
 - Painokertoimien laskennan toteuttaminen osaksi nuottien etsintää
     - Tästä taidosta on hyötyä mikäli joskus pääsee toteuttamaan esimerkiksi Bayesin-verkkoja
