@@ -5,7 +5,7 @@
 - Viime viikolla ilmennyt omien moduulien import-ongelma ratkaistu
 - Jatkettu algoritmin ytimen, eli Trie-tietorakenteen ohjelmointia
 - Aloitettu ohjelmoimaan pseudokoodina ABC-notaatiota lukevaa ja Trie-rakenteeseen tiedon tallentavaa muunninta
-- Toteutettu Trie-rakenteesta tietyn kirjainyhdistelmän etsivä hakutoiminto. Toiminto laskee myös viimeisen kirjaimen jälkeen tulevien kirjainten painokertoimet. Painokertoimia hyödynnetään 
+- Toteutettu Trie-rakenteesta tietyn kirjainyhdistelmän etsivä hakutoiminto. Toiminto laskee myös viimeisen kirjaimen jälkeen tulevien kirjainten painokertoimet. Painokertoimia hyödynnetään, kun musiikkia tuottava algoritmin osa generoi seuraavan nuotin.
 
 ## Miten ohjelma on edistynyt?
 
