@@ -35,6 +35,30 @@ class TrieRakenne:
             #print(f"{solmu} tämä on nuotti: {nuotti} {solmu.maara}")
 
         return solmu
+    
+    def maarita_painokertoimet(nuotit:str, rakenne):
+        vika = rakenne.etsi_nuotit(nuotit)
+    
+        print(vika.lapsi.keys())
+        summa = 0
+        seuraava_nuotti = {}
+        nuottien_maara = len(vika.lapsi)
+        if not vika.lapsi:
+                print("Tämä oli viimeinen nuotti, eikä sillä ole seuraajia. Valitse lopettava nuotti.")
+        else:
+            for key in vika.lapsi.keys():
+                summa += vika.lapsi[key].maara
+                seuraava_nuotti[key] = vika.lapsi[key].maara
+        y=0
+        for key in seuraava_nuotti.keys():
+            seuraava_nuotti[key] = y + seuraava_nuotti[key]/summa
+            y = seuraava_nuotti[key]
+
+        kerroin = random()
+        return seuraava_nuotti
+    
+
+
 
 if __name__ == '__main__':
     nuotit = "kala"
@@ -55,25 +79,4 @@ if __name__ == '__main__':
     x.lisaa_nuotit(y)
     x.lisaa_nuotit(y)
     x.lisaa_nuotit(["j","a","r"])
-    vika = x.etsi_nuotit("kala")
-    
-    print(vika.lapsi.keys())
-    summa = 0
-    seuraava_nuotti = {}
-    nuottien_maara = len(vika.lapsi)
-    if not vika.lapsi:
-            print("Tämä oli viimeinen nuotti, eikä sillä ole seuraajia. Valitse lopettava nuotti.")
-    else:
-        for key in vika.lapsi.keys():
-            summa += vika.lapsi[key].maara
-            seuraava_nuotti[key] = vika.lapsi[key].maara
-    y=0
-    for key in seuraava_nuotti.keys():
-        seuraava_nuotti[key] = y + seuraava_nuotti[key]/summa
-        y = seuraava_nuotti[key]
-
-    kerroin = random()
-    print(seuraava_nuotti)
-    
-        
-    
+    print(TrieRakenne.maarita_painokertoimet("kala", x))
