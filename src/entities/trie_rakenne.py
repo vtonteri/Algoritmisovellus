@@ -31,9 +31,7 @@ class TrieRakenne:
                 return False   
             #print(solmu.lapsi[nuotti].maara)         
             solmu = solmu.lapsi[nuotti]
-            
             #print(f"{solmu} tämä on nuotti: {nuotti} {solmu.maara}")
-
         return solmu
     
     def maarita_painokertoimet(nuotit:str, rakenne):
@@ -53,12 +51,8 @@ class TrieRakenne:
         for key in seuraava_nuotti.keys():
             seuraava_nuotti[key] = y + seuraava_nuotti[key]/summa
             y = seuraava_nuotti[key]
-
         kerroin = random()
         return seuraava_nuotti
-    
-
-
 
 if __name__ == '__main__':
     nuotit = "kala"
