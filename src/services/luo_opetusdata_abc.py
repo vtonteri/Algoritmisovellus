@@ -7,7 +7,7 @@ class LuoOpetusData:
                                       "f": 17, "g": 18, "a": 19, "b": 20, "c'":21, "d'": 22, "e'": 23, "f'": 24, "g'": 25, "a'": 26, "b'": 27}
         self.opetusdata_muunnettu = []
 
-        self.rakenne = TrieRakenne()
+        #self.rakenne = TrieRakenne()
 
     def lue_ja_muunna_abc_data(self):
 

@@ -23,7 +23,7 @@ class TrieRakenne:
             solmu.maara += 1
         solmu.on_viimeinen = True 
 
-    def etsi_nuotit(self, etsittavat_nuotit: str) -> bool:
+    def etsi_nuotit(self, etsittavat_nuotit: str):
         solmu = self.juuri
 
         for nuotti in etsittavat_nuotit:
@@ -34,10 +34,10 @@ class TrieRakenne:
             #print(f"{solmu} tämä on nuotti: {nuotti} {solmu.maara}")
         return solmu
     
-    def maarita_painokertoimet(nuotit:str, rakenne):
+    def maarita_painokertoimet(nuotit, rakenne):
         vika = rakenne.etsi_nuotit(nuotit)
     
-        print(vika.lapsi.keys())
+        #print(vika.lapsi.keys())
         summa = 0
         seuraava_nuotti = {}
         nuottien_maara = len(vika.lapsi)
@@ -53,7 +53,7 @@ class TrieRakenne:
             y = seuraava_nuotti[key]
         kerroin = random()
         return seuraava_nuotti
-
+"""
 if __name__ == '__main__':
     nuotit = "kala"
     liaa = "mies"
@@ -73,4 +73,5 @@ if __name__ == '__main__':
     x.lisaa_nuotit(y)
     x.lisaa_nuotit(y)
     x.lisaa_nuotit(["j","a","r"])
-    print(TrieRakenne.maarita_painokertoimet("kala", x))
+    print(TrieRakenne.maarita_painokertoimet(["k", "a", "l", "a"], x))
+"""
