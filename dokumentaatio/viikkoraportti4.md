@@ -20,6 +20,7 @@
 ## Miten ohjelma on edistynyt?
 
 - ABC-notaatiomuunnin toteutettu
+- Markovin ketjujen tilojen määrän huomioon ottava opetusmetodi luotu
 - Yksikkötestaus aloitettu
 
 ## Mitä opin tällä viikolla / tänään?
