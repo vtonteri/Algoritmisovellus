@@ -27,10 +27,10 @@ class TrieRakenne:
         solmu = self.juuri
 
         for nuotti in etsittavat_nuotit:
-            if nuotti not in solmu.lapsi:
+            if int(nuotti) not in solmu.lapsi:
                 return False   
             #print(solmu.lapsi[nuotti].maara)         
-            solmu = solmu.lapsi[nuotti]
+            solmu = solmu.lapsi[int(nuotti)]
             #print(f"{solmu} tämä on nuotti: {nuotti} {solmu.maara}")
         return solmu
     
@@ -40,7 +40,7 @@ class TrieRakenne:
         #print(vika.lapsi.keys())
         summa = 0
         seuraava_nuotti = {}
-        nuottien_maara = len(vika.lapsi)
+        #nuottien_maara = len(vika.lapsi)
         if not vika.lapsi:
                 print("Tämä oli viimeinen nuotti, eikä sillä ole seuraajia. Valitse lopettava nuotti.")
         else:
