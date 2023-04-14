@@ -55,7 +55,7 @@ def main():
         x+=1
     #opetusdata.lisaa_nuotit(data.opetusdata_muunnettu)
     #print(TrieRakenne.etsi_nuotit(opetusdata, "19"))
-    print(TrieRakenne.maarita_painokertoimet(["18", "17"], opetusdata))
+    print(TrieRakenne.maarita_painokertoimet(["18", "18"], opetusdata))
 
 
 if __name__ == "__main__":
