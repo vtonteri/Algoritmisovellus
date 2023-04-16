@@ -15,7 +15,7 @@
     - Virheellisten syötteiden käsittely lisätty, tämä on vielä kesken
 
 - Testit:
-    - Yksikkötestaus:
+    - Yksikkötestaus laahaa pahasti jäljessä
 
 ## Miten ohjelma on edistynyt?
 
@@ -25,7 +25,8 @@
 
 ## Mitä opin tällä viikolla / tänään?
 
-- 
+- Tiedostojen lukeminen
+- Eri metodien ja luokkien käyttäminen keskenään ja yhteen taidot syventyivät huomattavasti
 
 ## Mikä jäi epäselväksi tai tuottanut vaikeuksia? Vastaa tähän kohtaan rehellisesti, koska saat tarvittaessa apua tämän kohdan perusteella.
 
