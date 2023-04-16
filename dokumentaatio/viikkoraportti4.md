@@ -29,7 +29,7 @@
 
 ## Mikä jäi epäselväksi tai tuottanut vaikeuksia? Vastaa tähän kohtaan rehellisesti, koska saat tarvittaessa apua tämän kohdan perusteella.
 
-- Tällä viikolla moni asia tuntui helpolta, joten tähän kohtaan ei ole raportoitavaa
+- Yksikkötestien kirjoittaminen laahaa tällä hetkellä todella pahasti jäljessä. Jostain syystä en ole saanut aikaiseksi niiden kirjoittamista. Ne eivät ole periaatteessa vaikeita ja olenkin testannut koodin toimivuutta osana kehitystä, nyt ne pitäisi vain saada kirjoitettua testiluokiksi.
 
 ## Mitä teen seuraavaksi?
 
@@ -38,7 +38,7 @@
 
 ## Käytetty tuntimäärä
 
-- Arvio käytetystä ajasta: 8 h
+- Arvio käytetystä ajasta: 9 h
 
 Kumulatiivinen työajan seuranta:
 
@@ -47,5 +47,5 @@ Kumulatiivinen työajan seuranta:
 | 1 | 8 | Projektin alustaminen, tietorakenteen koodaus |
 | 2 | 8 | Muuntimen pseudokoodin rakentaminen, Import-ongelman selvittely |
 | 3 | 9 | Import-ongelman ratkaisu, Trie-rakenteen kehitys, abc-notaation selvittely |
-| 4 | 8 | ABC-muuntimen koodaus, Trie-rakenteen hakutoiminnan kehitys, yksikkötestien kirjoittaminen |
-| Yht | 33 |  |
+| 4 | 9 | ABC-muuntimen koodaus, Trie-rakenteen hakutoiminnan kehitys, yksikkötestien kirjoittaminen |
+| Yht | 34 |  |
