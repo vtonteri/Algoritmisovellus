@@ -29,7 +29,6 @@ Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
         - luo_opetusdata.py sisältää luokan LuoOpetusData
             - Luokka sisältää abc-notaation muuntamiseen tarvittavan dictionaryn, johon on määritetty nuotteja vastaavat lukuarvot. Opetusdata sisältää numeroita, jotka vastaavat tiettyjä nuotteja.
             - Luokka sisältää yhden metodin, lue_ja_muunna_abc_data
-                - 
     - Sisältää opetusdatasta oppimiseen tarvittavat luokat ja metodit
     - Sisältää opetusdatan perusteella luotavaan musiikkitiedostoon tarvittavat luokat ja metodit
 
