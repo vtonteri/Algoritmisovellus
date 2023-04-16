@@ -1,4 +1,4 @@
-from entities.trierakenne import TrieRakenne, TrieSolmu
+import os
 
 class LuoOpetusData:
     
@@ -7,40 +7,20 @@ class LuoOpetusData:
                                       "f": 17, "g": 18, "a": 19, "b": 20, "c'":21, "d'": 22, "e'": 23, "f'": 24, "g'": 25, "a'": 26, "b'": 27}
         self.opetusdata_muunnettu = []
 
-        #self.rakenne = TrieRakenne()
+    def lue_ja_muunna_abc_data(self, savellaji: str):
 
-    def lue_ja_muunna_abc_data(self):
+        os.chdir(f"data/opetusdata/{savellaji}")
+        tiedostot = os.listdir(os.getcwd())
+        print(tiedostot)
 
-        f = open("data/opetusdata/G/G_data_1.txt")
-
-        for i in f:
-            for j in i:
-                if j in self.muunnos_abc_numeroksi:
-                    self.opetusdata_muunnettu.append(self.muunnos_abc_numeroksi[j])
+        for tiedosto in tiedostot:
+            try:
+                with open(tiedosto, "r") as nuotit:
+                    for rivi in nuotit:
+                        for nuotti in rivi:
+                            if nuotti in self.muunnos_abc_numeroksi:
+                                self.opetusdata_muunnettu.append(self.muunnos_abc_numeroksi[nuotti])
+            except OSError as error:
+                print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
 
         print(self.opetusdata_muunnettu)
-
-
-
-       
-        #Kuvaus pseudokoodina:
-        # Alusta tyhjä dictionary
-        # Kovakoodattuna pitää olla muunnin nuoteista numeroiksi: tähän käy dictionary, jossa key on nuotti ja key:tä vastaava item on numero
-        # For-loopin sisällä toteutetaan seuraava:
-            # 1. avaa polun ../data/opetusdata alta aakkosissa ensimmäisenä oleva abc-tiedosto
-            # 2. Toisen for-loopin sisällä toteutetaan seuraava:
-                # 3. Alusta dictionaryyn uusi lista seuraavalla järjestysnumerolla 
-                # 3. Käy tiedoston sisältö läpi seuraavasti:
-                    # 4. Ignooraa alkumerkit (tiedosto on valittu oikeasta sävellajista)
-                    # 5. Kun löydät merkkiyhdistelmän |: --> aloita lukeminen ja tallentaminen
-                    # 6. lue merkki kerrallaan nuotit, muunna nuotti muunnin-dict:stä löytyvän key-item parin perusteella numeroksi
-                    # 7. Tallenna muunnettu merkki self.opetusdata -tietorakenteeseen
-
-    
-    # ABC-tiedoston sisällöstä:
-    # https://abcnotation.com/wiki/abc:standard:v2.1
-    
-    #Kommentointi:
-    # |:DEF FED| % this is an end of line comment
-    # % this is a comment line
-    # DEF [r:and this is a remark] FED:|

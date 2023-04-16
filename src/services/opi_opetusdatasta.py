@@ -42,6 +42,7 @@ if __name__ == "__main__":
     n = 10
     x = 0 
     syotelista = [i for i in range(21,100)]
+    #syotelista = {"1": }
     apulista = []
     opi(n, syotelista, apulista)
     print(syotelista)

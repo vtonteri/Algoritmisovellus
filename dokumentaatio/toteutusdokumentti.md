@@ -4,7 +4,7 @@
 
 Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
 
-- Entities:
+- **Entities:**
     - Sisältää Trie-tietorakenteen konstruointiin ja hakemiseen tarvittavat luokat ja metodit
         - trierakenne.py sisältää luokat TrieSolmu ja TrieRakenne
             - TrieSolmu:
@@ -24,7 +24,7 @@ Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
                         - Ottaa syötteenä joko merkkijonon (str) tai listan (list). Etsii merkkijonoa vastaavan TrieRakenteen ja palauttaa viimeisen solmun
                     - maarita_painokertoimet:
                         - Ottaa syötteenä joko merkkijonon (str) tai listan (list) sekä TrieRakenteen, josta halutaan etsiä tietoa. Kutsuu etsi_nuotit -metodia, joka palauttaa viimeisen nuotin jälkeen tulevien mahdollisten nuottien määrät. Tämän jälkeen määritetään jokaiselle nuotille painokerroin ja palautetaan dict, jossa key = nuotti ja value = painokerroin.
-- Services:
+- **Services:**
     - Sisältää opetusdatan lukemiseen ja luomiseen tarvittavat luokat ja metodit
         - luo_opetusdata.py:
     - Sisältää opetusdatasta oppimiseen tarvittavat luokat ja metodit

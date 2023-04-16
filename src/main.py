@@ -4,7 +4,7 @@ from services.luo_opetusdata_abc import LuoOpetusData
 from entities.trierakenne import TrieRakenne
 
 
-def main():
+def main(savellaji):
     """
     Tavoiteltava lopputulos:
         
@@ -15,9 +15,10 @@ def main():
         4. luo uuden kappaleen Trie-rakenteen perusteella /data/tulosdata-kansioon
     
     6.4.2023 toiminta:
-        1. Lukee opetusdatan (tällä hetkellä vain yhden tiedoston (G_data_1.txt)) 
+        1. Lukee valitusta opetusdatakansiosta kaikkien tiedostojen sisällön
         2. Luo opetusdatan (muuntaa tiedoston nuotit numeroiksi ja tekee listan)
         3. Luo opetusdatan pohjalta Trie-rakenteen
+        4. Määrittää Trie-rakenteesta painokertoimet ja palauttaa dict:n, mikä sisältää seuraavien nuottien painokertoimet
     
     nuotit = "kala"
     liaa = "mies"
@@ -41,7 +42,7 @@ def main():
     """
     
     data = LuoOpetusData()
-    data.lue_ja_muunna_abc_data()
+    data.lue_ja_muunna_abc_data(savellaji)
     opetusdata = TrieRakenne()
     x = 0
     for i in data.opetusdata_muunnettu:
@@ -55,8 +56,9 @@ def main():
         x+=1
     #opetusdata.lisaa_nuotit(data.opetusdata_muunnettu)
     #print(TrieRakenne.etsi_nuotit(opetusdata, "19"))
-    print(TrieRakenne.maarita_painokertoimet(["18", "18"], opetusdata))
+    print(TrieRakenne.maarita_painokertoimet(["18", "19"], opetusdata))
 
 
 if __name__ == "__main__":
-    main()
+    savellaji = "G"
+    main(savellaji)
