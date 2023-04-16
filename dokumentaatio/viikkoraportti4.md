@@ -4,7 +4,7 @@
 
 - Toteutettu ABC-notaation lukeva ja Trie-rakenteeseen tiedon tallentava muunnin
     - Muuntimen toiminta:
-        - Lukee .txt tiedoston (tällä hetkellä vielä vain yksi tiedosto)
+        - Lukee kaikki .txt tiedostot tällä hetkellä vain opetusdata/G -kansiosta 
         - Muuntaa notaation nuotit numeroiksi
         - Luo ja tallentaa tiedon Trie-rakenteeksi
 
