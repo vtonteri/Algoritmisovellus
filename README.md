@@ -46,7 +46,7 @@ jonka jälkeen
 
 ## **Releases**
 
-**[Ensimmäisen vertaisarvioinnin release](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/viikkoraportti4.md)**
+**[Ensimmäisen vertaisarvioinnin release](https://github.com/vtonteri/Algoritmisovellus/releases/tag/v.0.4)**
 
 Huomioita tämän hetken versiosta:
 
