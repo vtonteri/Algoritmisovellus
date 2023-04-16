@@ -28,14 +28,21 @@ Ohjelma on testattu ja toiminta varmistettu Python 3.9.7 -versiolla. Aiempien ve
 
 # **Ohjelma käyttöohje**
 
-## **Asennus**
+## **Asennus ja käyttö**
 
-Tähän kirjoitetaan ohjelman alustukseen ja asennukseen liittyvät ohjeet
+1. Lataa Githubin Release
 
-## **Komentorivitoiminnot**
+2. Asenna riippuvuudet komennolla:
 
-Tähän kirjoitetaan ohjelman komentorivillä suorittamiseen liittyvät ohjeet
+`poetry install`
 
+3. Käynnistä algoritmi ajamalla *sovellus/src* -kansiossa seuraava komento:
+
+`poetry shell`
+
+jonka jälkeen
+
+`python main.py`
 
 ## **Releases**
 

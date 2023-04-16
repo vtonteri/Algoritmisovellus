@@ -9,9 +9,16 @@ class LuoOpetusData:
 
     def lue_ja_muunna_abc_data(self, savellaji: str):
 
-        os.chdir(f"data/opetusdata/{savellaji}")
-        tiedostot = os.listdir(os.getcwd())
-        print(tiedostot)
+        try: 
+            os.chdir(f"..\data\opetusdata\{savellaji}")
+            tiedostot = os.listdir(os.getcwd())
+        except FileNotFoundError:
+            pass
+        try:
+            os.chdir(f"data/opetusdata/{savellaji}")
+            tiedostot = os.listdir(os.getcwd())
+        except FileNotFoundError:
+            print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
 
         for tiedosto in tiedostot:
             try:
@@ -22,5 +29,3 @@ class LuoOpetusData:
                                 self.opetusdata_muunnettu.append(self.muunnos_abc_numeroksi[nuotti])
             except OSError as error:
                 print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
-
-        print(self.opetusdata_muunnettu)

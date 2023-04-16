@@ -9,7 +9,6 @@ class TrieSolmu:
     def __str__(self):
         return f"{self.lapsi.keys()}, {self.maara}, {self.on_viimeinen}"
 
-
 class TrieRakenne:
     def __init__(self):
         self.juuri = TrieSolmu()

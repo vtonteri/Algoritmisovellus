@@ -26,7 +26,10 @@ Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
                         - Ottaa syötteenä joko merkkijonon (str) tai listan (list) sekä TrieRakenteen, josta halutaan etsiä tietoa. Kutsuu etsi_nuotit -metodia, joka palauttaa viimeisen nuotin jälkeen tulevien mahdollisten nuottien määrät. Tämän jälkeen määritetään jokaiselle nuotille painokerroin ja palautetaan dict, jossa key = nuotti ja value = painokerroin.
 - **Services:**
     - Sisältää opetusdatan lukemiseen ja luomiseen tarvittavat luokat ja metodit
-        - luo_opetusdata.py:
+        - luo_opetusdata.py sisältää luokan LuoOpetusData
+            - Luokka sisältää abc-notaation muuntamiseen tarvittavan dictionaryn, johon on määritetty nuotteja vastaavat lukuarvot. Opetusdata sisältää numeroita, jotka vastaavat tiettyjä nuotteja.
+            - Luokka sisältää yhden metodin, lue_ja_muunna_abc_data
+                - 
     - Sisältää opetusdatasta oppimiseen tarvittavat luokat ja metodit
     - Sisältää opetusdatan perusteella luotavaan musiikkitiedostoon tarvittavat luokat ja metodit
 

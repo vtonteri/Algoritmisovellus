@@ -4,7 +4,7 @@ from services.luo_opetusdata_abc import LuoOpetusData
 from entities.trierakenne import TrieRakenne
 
 
-def main(savellaji):
+def main(savellaji, nuotit):
     """
     Tavoiteltava lopputulos:
         
@@ -19,26 +19,6 @@ def main(savellaji):
         2. Luo opetusdatan (muuntaa tiedoston nuotit numeroiksi ja tekee listan)
         3. Luo opetusdatan pohjalta Trie-rakenteen
         4. Määrittää Trie-rakenteesta painokertoimet ja palauttaa dict:n, mikä sisältää seuraavien nuottien painokertoimet
-    
-    nuotit = "kala"
-    liaa = "mies"
-    f = "kalamies"
-    s = "mieskala"
-    t = "kalakala"
-    y = "kalatyyppi"
-    x = TrieRakenne()
-
-    x.lisaa_nuotit(nuotit)
-    x.lisaa_nuotit(liaa)
-    x.lisaa_nuotit(f)
-    x.lisaa_nuotit(s)
-    x.lisaa_nuotit(t)
-    x.lisaa_nuotit(y)
-    x.lisaa_nuotit(y)
-    x.lisaa_nuotit(y)
-    x.lisaa_nuotit(y)
-    x.lisaa_nuotit(["j","a","r"])
-    print(TrieRakenne.maarita_painokertoimet(["k", "a", "l", "a"], x))
     """
     
     data = LuoOpetusData()
@@ -56,9 +36,10 @@ def main(savellaji):
         x+=1
     #opetusdata.lisaa_nuotit(data.opetusdata_muunnettu)
     #print(TrieRakenne.etsi_nuotit(opetusdata, "19"))
-    print(TrieRakenne.maarita_painokertoimet(["18", "19"], opetusdata))
+    print(TrieRakenne.maarita_painokertoimet(nuotit, opetusdata))
 
 
 if __name__ == "__main__":
     savellaji = "G"
-    main(savellaji)
+    nuotit = ["18", "19"]
+    main(savellaji, nuotit)
