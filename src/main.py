@@ -27,15 +27,10 @@ def main(savellaji, nuotit):
     x = 0
     for i in data.opetusdata_muunnettu:
         try: 
-            #print(f"Ensimmäinen: {data.opetusdata_muunnettu[x]} Toinen: {data.opetusdata_muunnettu[x+1]} Kolmas: {data.opetusdata_muunnettu[x+2]}")
             opetusdata.lisaa_nuotit([data.opetusdata_muunnettu[x], data.opetusdata_muunnettu[x+1], data.opetusdata_muunnettu[x+2]])
         except IndexError:
-            #print(f"Ensimmäinen: {data.opetusdata_muunnettu[x]} Toinen: G kolmas: G")
             opetusdata.lisaa_nuotit([data.opetusdata_muunnettu[x], "18", "18"])
-
         x+=1
-    #opetusdata.lisaa_nuotit(data.opetusdata_muunnettu)
-    #print(TrieRakenne.etsi_nuotit(opetusdata, "19"))
     print(TrieRakenne.maarita_painokertoimet(nuotit, opetusdata))
 
 

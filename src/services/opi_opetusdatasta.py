@@ -1,49 +1,23 @@
-"""g = {1: (2, 4), 2: (3, 6), 3: (10, 100)}
-
-
-for value in g.values():
-    print(f"tämä on key : {value[0]} {value[1]}")
-    value[1] += 1
-
-
-for i in range(2):
-    g[i+1] = g[i+1]
-
-print(g)
-"""
-
-"""
-def rekursio(n: int, syotelista: list, apulista: list, x: int):
-
-    if n == 0:
-        return apulista
+class OpiDatasta:
     
-    for i in range(x):
-        return None
-"""
+    def __init__(self):
+        self.apulista = []
 
-def opi(n, syotelista: list, apulista: list):
-
-    for i in range(len(syotelista)-n+1):
-        #print(syotelista[i])
-        apulista = []
-        for j in range(n):
-
-            #print(syotelista[j+i])
-            apulista.append(syotelista[j+i])
-        print(apulista)    
-
-
-
-
+    def opi(self, tilojen_maara, syotelista: list):
+        for i in range(len(syotelista)-tilojen_maara+1):
+            for j in range(tilojen_maara):
+                self.apulista.append(syotelista[j+tilojen_maara])
+            
+            self.apulista = []
+        return self.apulista    
+    
 if __name__ == "__main__":
    
    
     n = 10
-    x = 0 
+    x = OpiDatasta() 
     syotelista = [i for i in range(21,100)]
     #syotelista = {"1": }
     apulista = []
-    opi(n, syotelista, apulista)
-    print(syotelista)
+    print(x.opi(n, syotelista))
 
