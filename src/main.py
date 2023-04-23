@@ -1,10 +1,11 @@
 import sys
 from pprint import pprint
 from services.luo_opetusdata_abc import LuoOpetusData
+from services.opi_opetusdatasta import OpiDatasta
 from entities.trierakenne import TrieRakenne
 
 
-def main(savellaji, nuotit):
+def main(savellaji, nuotit, tilojen_maara):
     """
     Tavoiteltava lopputulos:
         
@@ -23,18 +24,12 @@ def main(savellaji, nuotit):
     
     data = LuoOpetusData()
     data.lue_ja_muunna_abc_data(savellaji)
-    opetusdata = TrieRakenne()
-    x = 0
-    for i in data.opetusdata_muunnettu:
-        try: 
-            opetusdata.lisaa_nuotit([data.opetusdata_muunnettu[x], data.opetusdata_muunnettu[x+1], data.opetusdata_muunnettu[x+2]])
-        except IndexError:
-            opetusdata.lisaa_nuotit([data.opetusdata_muunnettu[x], "18", "18"])
-        x+=1
-    print(TrieRakenne.maarita_painokertoimet(nuotit, opetusdata))
-
+    opetusdata = OpiDatasta()
+    x = opetusdata.opi(tilojen_maara, data.opetusdata_muunnettu)
+    print(TrieRakenne.maarita_painokertoimet(nuotit, x))
 
 if __name__ == "__main__":
     savellaji = "G"
-    nuotit = ["18", "19"]
-    main(savellaji, nuotit)
+    nuotit = ["18", "18"]
+    tilojen_maara = 3
+    main(savellaji, nuotit, tilojen_maara)

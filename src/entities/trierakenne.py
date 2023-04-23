@@ -20,7 +20,8 @@ class TrieRakenne:
                 solmu.lapsi[nuotti] = TrieSolmu()
             solmu = solmu.lapsi[nuotti]
             solmu.maara += 1
-        solmu.on_viimeinen = True 
+        solmu.on_viimeinen = True
+        return solmu.on_viimeinen
 
     def etsi_nuotit(self, etsittavat_nuotit: str):
         solmu = self.juuri
@@ -37,6 +38,7 @@ class TrieRakenne:
         seuraava_nuotti = {}
         if vika == False:
                 print("Tämä oli viimeinen nuotti, eikä sillä ole seuraajia. Valitse lopettava nuotti.")
+                return("G")
         else:
             for key in vika.lapsi.keys():
                 summa += vika.lapsi[key].maara

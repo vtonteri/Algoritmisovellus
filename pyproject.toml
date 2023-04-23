@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "sovellus"
+version = "0.1.0"
+description = ""
+authors = ["Ville Tonteri <ville.tonteri@helsinki.fi>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+cowsay = "^5.0"
+
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.2.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
