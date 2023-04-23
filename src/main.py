@@ -15,7 +15,7 @@ def main(savellaji, nuotit, tilojen_maara):
         3. luo Trie-rakenteen opetusdatan perusteella
         4. luo uuden kappaleen Trie-rakenteen perusteella /data/tulosdata-kansioon
     
-    6.4.2023 toiminta:
+    23.4.2023 toiminta:
         1. Lukee valitusta opetusdatakansiosta kaikkien tiedostojen sisällön
         2. Luo opetusdatan (muuntaa tiedoston nuotit numeroiksi ja tekee listan)
         3. Luo opetusdatan pohjalta Trie-rakenteen
@@ -29,7 +29,16 @@ def main(savellaji, nuotit, tilojen_maara):
     print(TrieRakenne.maarita_painokertoimet(nuotit, x))
 
 if __name__ == "__main__":
+
+    """
+    savellaji -muuttuja määrittää mistä opetusdata -kansion kansiosta opetusdata luetaan
+    nuotit - listalla määritetään mikä nuottikierto etsitään luodusta trie-rakenteesta
+    tilojen_maara -muuttujalla määritetään, kuinka monta tasoa luodaan opetusdataan (Trie-rakenne). 
+    nuotit -listan alkioiden määrän tulee olla yksi vähemmän kuin tilojen määrä
+    """
     savellaji = "G"
-    nuotit = ["18", "18"]
-    tilojen_maara = 3
+    savellaji_muunnettu = LuoOpetusData().muunnos_abc_numeroksi[savellaji]
+    print(savellaji_muunnettu)
+    nuotit = [savellaji_muunnettu, savellaji_muunnettu]
+    tilojen_maara = 4
     main(savellaji, nuotit, tilojen_maara)
