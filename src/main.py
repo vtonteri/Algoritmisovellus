@@ -1,8 +1,6 @@
-import sys
-from pprint import pprint
 from services.luo_opetusdata_abc import LuoOpetusData
-from services.opi_opetusdatasta import OpiDatasta
-from entities.trierakenne import TrieRakenne
+from services.luo_uusi_kappale import LuoUusiKappale
+import os
 
 
 def main(savellaji, nuotit, tilojen_maara):
@@ -21,12 +19,10 @@ def main(savellaji, nuotit, tilojen_maara):
         3. Luo opetusdatan pohjalta Trie-rakenteen
         4. Määrittää Trie-rakenteesta painokertoimet ja palauttaa dict:n, mikä sisältää seuraavien nuottien painokertoimet
     """
+    LuoUusiKappale(savellaji, tilojen_maara, nuotit).luo_uusi_kappale()
+
     
-    data = LuoOpetusData()
-    data.lue_ja_muunna_abc_data(savellaji)
-    opetusdata = OpiDatasta()
-    x = opetusdata.opi(tilojen_maara, data.opetusdata_muunnettu)
-    print(TrieRakenne.maarita_painokertoimet(nuotit, x))
+
 
 if __name__ == "__main__":
 
@@ -36,9 +32,30 @@ if __name__ == "__main__":
     tilojen_maara -muuttujalla määritetään, kuinka monta tasoa luodaan opetusdataan (Trie-rakenne). 
     nuotit -listan alkioiden määrän tulee olla yksi vähemmän kuin tilojen määrä
     """
-    savellaji = "G"
-    savellaji_muunnettu = LuoOpetusData().muunnos_abc_numeroksi[savellaji]
-    print(savellaji_muunnettu)
-    nuotit = [savellaji_muunnettu, savellaji_muunnettu]
-    tilojen_maara = 4
-    main(savellaji, nuotit, tilojen_maara)
+    
+    try: 
+        tiedosto_polku =  "..\data\opetusdata"
+        tiedostot_ja_kansiot = os.listdir(tiedosto_polku)
+    except FileNotFoundError:
+        pass
+    try:
+        tiedosto_polku = "data/opetusdata"
+        tiedostot_ja_kansiot = os.listdir(tiedosto_polku)
+    except FileNotFoundError:
+        print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
+    
+    kansiot = [f for f in tiedostot_ja_kansiot if os.path.isdir(os.path.join(tiedosto_polku, f))]
+
+    while(True):
+        savellaji = input(f"Anna sävellaji, tällä hetkellä jokin seuraavista {kansiot}. Painamalla x ohjelma lopettaa \n")
+        
+        if savellaji in kansiot:
+            tilojen_maara = int(input(f"Anna ennustamiseen käytettävien Markovin ketjujen tilojen määrä:\n"))
+            savellaji_muunnettu = LuoOpetusData().muunnos_abc_numeroksi[savellaji]
+            nuotit = [savellaji_muunnettu for i in range(tilojen_maara-1)]
+            main(savellaji, nuotit, tilojen_maara)
+            break
+        elif savellaji == "X" or savellaji == "x":
+            break
+        else:
+            print("Anna kelvollinen sävellaji tai tilojen määrä (kokonaisluku)")

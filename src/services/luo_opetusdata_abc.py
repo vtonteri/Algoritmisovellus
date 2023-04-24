@@ -7,6 +7,8 @@ class LuoOpetusData:
                                       "f": 17, "g": 18, "a": 19, "b": 20, "c'":21, "d'": 22, "e'": 23, "f'": 24, "g'": 25, "a'": 26, "b'": 27}
         self.opetusdata_muunnettu = []
 
+        self.muunnettu_savel_data = []
+
     def lue_ja_muunna_abc_data(self, savellaji: str):
 
         try: 
@@ -29,3 +31,11 @@ class LuoOpetusData:
                                 self.opetusdata_muunnettu.append(self.muunnos_abc_numeroksi[nuotti])
             except OSError as error:
                 print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
+
+    def lue_ja_muunna_savel_data(self, muunnettavat_nuotit: list):
+
+        for i in muunnettavat_nuotit:
+            for key, value in self.muunnos_abc_numeroksi.items():
+                if i == value:
+                    self.muunnettu_savel_data.append(key)
+        return self.muunnettu_savel_data

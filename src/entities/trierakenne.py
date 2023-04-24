@@ -1,4 +1,5 @@
 from random import random
+from services.luo_opetusdata_abc import LuoOpetusData
 
 class TrieSolmu:
     def __init__(self):
@@ -32,13 +33,13 @@ class TrieRakenne:
             solmu = solmu.lapsi[int(nuotti)]
         return solmu
     
-    def maarita_painokertoimet(nuotit, rakenne):
+    def maarita_painokertoimet(nuotit, rakenne, savellaji):
         vika = rakenne.etsi_nuotit(nuotit)
         summa = 0
         seuraava_nuotti = {}
         if vika == False:
-                print("Tämä oli viimeinen nuotti, eikä sillä ole seuraajia. Valitse lopettava nuotti.")
-                return("G")
+                print("Tämä oli viimeinen nuotti, eikä sillä ole seuraajia. Seuraava nuotti valittiin sävellajin nuotiksi.")
+                return LuoOpetusData().muunnos_abc_numeroksi[savellaji]
         else:
             for key in vika.lapsi.keys():
                 summa += vika.lapsi[key].maara
