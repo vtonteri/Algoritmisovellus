@@ -21,9 +21,6 @@ def main(savellaji, nuotit, tilojen_maara):
     """
     LuoUusiKappale(savellaji, tilojen_maara, nuotit).luo_uusi_kappale()
 
-    
-
-
 if __name__ == "__main__":
 
     """

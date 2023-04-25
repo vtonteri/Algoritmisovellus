@@ -2,6 +2,7 @@ from services.luo_opetusdata_abc import LuoOpetusData
 from services.opi_opetusdatasta import OpiDatasta
 from entities.trierakenne import TrieRakenne
 import random
+from services.tee_uusi_midi_tiedosto import TeeUusiMidiTiedosto
 
 
 class LuoUusiKappale():
@@ -14,7 +15,7 @@ class LuoUusiKappale():
         self.nuotit = nuotit
         self.savellaji = savellaji
         self.uusi_kappale = []
-        self.apulista = []
+        self.savelet_abc_notaationa = []
         self.apulista_2 = []
 
     def luo_uusi_kappale(self):
@@ -31,13 +32,15 @@ class LuoUusiKappale():
             etsittavat_nuotit.pop(0)
             etsittavat_nuotit.append(nuotti)
 
-
-        x = LuoOpetusData().lue_ja_muunna_savel_data(self.uusi_kappale)
+        self.savelet_abc_notaationa = LuoOpetusData().lue_ja_muunna_savel_data(self.uusi_kappale)
         y = 0
-        for i in x:
+        for i in self.savelet_abc_notaationa:
             self.apulista_2.append(i)
             if y % 8 == 0:
                 print(self.apulista_2)
-                self.apulista_2 = []
-            
+                self.apulista_2 = []            
             y += 1
+
+        uusi_midi = TeeUusiMidiTiedosto()
+        uusi_midi.luo_uusi_midi_tiedosto(self.savelet_abc_notaationa)
+
