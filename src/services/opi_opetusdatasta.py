@@ -1,4 +1,4 @@
-from src.entities.trierakenne import TrieRakenne
+from entities.trierakenne import TrieRakenne
 
 class OpiDatasta:
     

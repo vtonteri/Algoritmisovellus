@@ -32,11 +32,13 @@ if __name__ == "__main__":
     
     try: 
         tiedosto_polku =  "..\data\opetusdata"
+        print("1")
         tiedostot_ja_kansiot = os.listdir(tiedosto_polku)
     except FileNotFoundError:
-        pass
+        print("1 ei toimi")
     try:
         tiedosto_polku = "data/opetusdata"
+        print("2")
         tiedostot_ja_kansiot = os.listdir(tiedosto_polku)
     except FileNotFoundError:
         print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
