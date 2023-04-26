@@ -17,22 +17,7 @@ class TeeUusiMidiTiedosto:
         aika = 0
 
         for i in savelet:
-            track.append(Message("note_on", channel = randint(5,15), note=self.muunnokset[i], velocity=127, time = aika*500))
+            track.append(Message("note_on", channel = randint(5,15), note=self.muunnokset[i], velocity=127, time = aika*200))
             aika += 1
 
         mid.save("musaa.mid")
-
-"""
-    
-            mid.save("data/tulosdata/musaa1.mid")
-        except:
-            pass
-        try: 
-            mid.save("..\data\tulosdata\musaa.mid")
-        except:
-            print("Ei voitu tallentaa tiedostoa.")
-"""
-
-
-        #for message in mid:
-        #    print(message)
