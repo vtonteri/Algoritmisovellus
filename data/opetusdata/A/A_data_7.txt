@@ -1,0 +1,4 @@
+(A/B/) | c/A/G/A/ F/A/E/A/ | c/A/G/A/ a(g/f/) | e/A/G/A/ F/A/E/A/ | z2 .B/(e/^d/=d/) |
+c/A/G/A/ F/A/E/A/ | c/A/G/A/ a(g/f/) | e/A/G/A/ F/A/E/A/ | c/e/c/B/ A :|
+|: (c/d/) | e/^d/f/e/ a/e/c/A/ | B/c/B/A/ G/E/F/G/ | (A/G/)(B/A/) (c/B/)(d/c/) | (e/^d/)(f/e/) B/c/=d/^d/ |
+e/^d/f/e/ a/e/c/A/ | G/c/B/A/ G/E/F/G/ | A/a/g/f/ e/d/c/e/ | 3g/f/e/ (3d/c/B/ A :||

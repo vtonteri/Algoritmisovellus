@@ -1,0 +1,3 @@
+e|(a>bc'>)a (f>ga>).f|(d<c)(B>c) A2 (c>e)|(f>ea).c (B>cB)A|A4-A3:||
+e|(e>fg).a {ab}(c'2 b).a|g2 {g}f>e .e3 .e|(e>f).g.a {ab}(c'2 b).a|(g>a) (g/f/c'>b/) e2 (fg)|
+(a>b).c'.a (f>g).a.f|(e<c)(B>c) A2 (ce)|(f>ea>).c TB4 {AcB}|A4-A3||

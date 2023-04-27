@@ -7,7 +7,7 @@ from services.tee_uusi_midi_tiedosto import TeeUusiMidiTiedosto
 
 class LuoUusiKappale():
 
-    def __init__(self, savellaji, tilojen_maara, nuotit):
+    def __init__(self, savellaji, tilojen_maara, nuotit, oktaavi):
         self.data = LuoOpetusData()
         self.data.lue_ja_muunna_abc_data(savellaji)
         self.opetusdata = OpiDatasta()
@@ -17,6 +17,7 @@ class LuoUusiKappale():
         self.uusi_kappale = []
         self.savelet_abc_notaationa = []
         self.apulista_2 = []
+        self.oktaavi = oktaavi
 
     def luo_uusi_kappale(self):
 
@@ -33,14 +34,6 @@ class LuoUusiKappale():
             etsittavat_nuotit.append(nuotti)
 
         self.savelet_abc_notaationa = LuoOpetusData().lue_ja_muunna_savel_data(self.uusi_kappale)
-        y = 0
-        for i in self.savelet_abc_notaationa:
-            self.apulista_2.append(i)
-            if y % 8 == 0:
-                print(self.apulista_2)
-                self.apulista_2 = []            
-            y += 1
-
-        uusi_midi = TeeUusiMidiTiedosto()
+        uusi_midi = TeeUusiMidiTiedosto(self.oktaavi)
         uusi_midi.luo_uusi_midi_tiedosto(self.savelet_abc_notaationa)
 

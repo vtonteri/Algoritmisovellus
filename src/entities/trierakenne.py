@@ -38,8 +38,7 @@ class TrieRakenne:
         summa = 0
         seuraava_nuotti = {}
         if vika == False:
-                print("Tämä oli viimeinen nuotti, eikä sillä ole seuraajia. Seuraava nuotti valittiin sävellajin nuotiksi.")
-                return LuoOpetusData().muunnos_abc_numeroksi[savellaji]
+                return {LuoOpetusData().muunnos_abc_numeroksi[savellaji]: 1.0}
         else:
             for key in vika.lapsi.keys():
                 summa += vika.lapsi[key].maara

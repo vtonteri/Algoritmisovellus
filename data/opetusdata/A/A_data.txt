@@ -1,0 +1,6 @@
+cB| "A"A3B A2E2| ABcd e2dc| "E"B3c B2E2| GABc d2cB|
+    "A"A3B A2E2| ABcd e2dc| "E"d2B2 G2E2| "A"A6 :|
+ed| "A"c2A2 A2ed| c2A2 A2Bc| "E"d2B2 G2B2| G2E2 E2ed|
+    "A"c2A2 A2ed| c2A2 A2Bc| "E"d2B2 G2E2| "A"A6 ed|
+    "A"c2A2 A2ed| c2A2 A2Bc| "E"d2B2 G2B2| G2E2 E2cB|
+    "A"A3B A2E2| ABcd e2dc| "E"dcB2 G2E2| "A"A6 |]
