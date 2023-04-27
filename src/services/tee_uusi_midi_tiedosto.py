@@ -27,17 +27,26 @@ class TeeUusiMidiTiedosto:
         indeksi = 0
 
         for nuotti in savelet:
+            
             if indeksi <= 7:
-                self.sakeisto_nuotit.append(nuotti)
+                kerroin = randint(1,8)
+                for j in range(kerroin):
+                    self.sakeisto_nuotit.append(nuotti)
                 indeksi += 1
             elif indeksi > 7 and indeksi <= 15:
-                self.kertosae_nuotit.append(nuotti)
+                kerroin = randint(1,8)
+                for j in range(kerroin):
+                    self.kertosae_nuotit.append(nuotti)
                 indeksi += 1
             elif indeksi > 15 and indeksi <= 23:
-                self.melodia_nuotit.append(nuotti)
+                kerroin = randint(1,8)
+                for j in range(kerroin):
+                    self.melodia_nuotit.append(nuotti)
                 indeksi += 1
             elif indeksi > 23 and indeksi <= 31:
-                self.bridge_nuotit.append(nuotti)
+                kerroin = randint(1,8)
+                for j in range(kerroin):
+                    self.bridge_nuotit.append(nuotti)
                 indeksi += 1
 
         self.sakeisto()
