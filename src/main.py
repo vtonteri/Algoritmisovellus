@@ -42,7 +42,7 @@ if __name__ == "__main__":
         print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
     
     kansiot = [f for f in tiedostot_ja_kansiot if os.path.isdir(os.path.join(tiedosto_polku, f))]
-    oktaavi = 3
+    oktaavi = 4
 
     while(True):
         savellaji = input(f"Anna sävellaji, tällä hetkellä jokin seuraavista {kansiot}. Painamalla x ohjelma lopettaa \n")
