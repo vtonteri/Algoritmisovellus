@@ -2,7 +2,6 @@ from mido import MidiFile, MidiTrack, Message
 from random import randint
 import os
 
-
 class TeeUusiMidiTiedosto:
     def __init__(self, oktaavi):
         self.mid = MidiFile(type=0)
@@ -60,6 +59,7 @@ class TeeUusiMidiTiedosto:
         self.kertosae()
 
         self.mid.save("uusi_kappale.mid")
+        print(f"Uusi tiedosto luotu onnistuneesti kansioon data/opetusdata/'valittu savellaji'")
 
     def sakeisto(self):
         for nuotti in self.sakeisto_nuotit:

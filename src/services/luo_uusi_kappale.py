@@ -23,7 +23,7 @@ class LuoUusiKappale():
 
         etsittavat_nuotit = [nuotti for nuotti in self.nuotit]
 
-        for i in range(50):
+        for i in range(100):
             seuraavat_mahdolliset_nuotit = TrieRakenne.maarita_painokertoimet(etsittavat_nuotit, self.opittu_data, self.savellaji)
             vertailu_kerroin = random.random()
             for nuotti, painokerroin in seuraavat_mahdolliset_nuotit.items():

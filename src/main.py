@@ -34,7 +34,7 @@ if __name__ == "__main__":
         tiedosto_polku =  "..\data\opetusdata"
         tiedostot_ja_kansiot = os.listdir(tiedosto_polku)
     except FileNotFoundError:
-        print("1 ei toimi")
+        pass
     try:
         tiedosto_polku = "data/opetusdata"
         tiedostot_ja_kansiot = os.listdir(tiedosto_polku)
