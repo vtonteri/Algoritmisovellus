@@ -44,3 +44,33 @@ class LuoOpetusData:
                 if i == value:
                     self.muunnettu_savel_data.append(key)
         return self.muunnettu_savel_data
+
+
+    def lue_ja_muunna_abc_testi_data(self):
+
+        try: 
+            os.chdir(f"..\data\data_testi")
+            test_tiedostot = os.listdir(os.getcwd())
+        except FileNotFoundError:
+            pass
+        try:
+            os.chdir(f"data/data_testi")
+            test_tiedostot = os.listdir(os.getcwd())
+        except FileNotFoundError:
+            print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
+
+        for tiedosto in test_tiedostot:
+            try:
+                with open(tiedosto, "r") as nuotit:
+                    tarkistusbitti = 0
+                    for rivi in nuotit:
+                        for nuotti in rivi:                           
+                            if nuotti == "\"":
+                                tarkistusbitti += 1
+                                if tarkistusbitti == 2:
+                                    tarkistusbitti = 0
+                            elif nuotti in self.muunnos_abc_numeroksi and tarkistusbitti == 0:
+                                self.opetusdata_muunnettu.append(self.muunnos_abc_numeroksi[nuotti])
+                
+            except OSError as error:
+                print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")

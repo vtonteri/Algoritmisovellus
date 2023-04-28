@@ -1,5 +1,5 @@
 from random import random
-from services.luo_opetusdata_abc import LuoOpetusData
+from src.services.luo_opetusdata_abc import LuoOpetusData
 
 class TrieSolmu:
     def __init__(self):
@@ -47,5 +47,4 @@ class TrieRakenne:
         for key in seuraava_nuotti.keys():
             seuraava_nuotti[key] = y + seuraava_nuotti[key]/summa
             y = seuraava_nuotti[key]
-        kerroin = random()
         return seuraava_nuotti

@@ -12,6 +12,7 @@
 
 - Ohjelman ydintoiminnallisuudet on toteutettu:
     - ohjelma lukee syötteet, tekee opetusdatan, lukee opetusdatan, oppii opetusdatasta ja tuottaa opitusta opetusdatasta kuunneltavan ja toistettavan midi-tiedoston
+- Ohjelman ennustamaa sävelkiertoa on elävoitetty luomalla ennustettujen sävelien lisäksi kaksi eri nuottia, jolloin musiikki, joka saadaan, on hieman monipuolisempaa, kuin pelkästään yhden nuotin toistoa
 - Yksikkötestausta jatkettu
 
 ## Mitä opin tällä viikolla / tänään?
@@ -27,10 +28,11 @@
 ## Mitä teen seuraavaksi?
 
 - Keskityn ohjelman testikattavuuden lisäämiseen
+- Päivitän dokumentaation ja luon puuttuvat dokumentit
 
 ## Käytetty tuntimäärä
 
-- Arvio käytetystä ajasta: 10 h
+- Arvio käytetystä ajasta: 22 h
 
 Kumulatiivinen työajan seuranta:
 
@@ -41,5 +43,5 @@ Kumulatiivinen työajan seuranta:
 | 3 | 9 | Import-ongelman ratkaisu, Trie-rakenteen kehitys, abc-notaation selvittely |
 | 4 | 9 | ABC-muuntimen koodaus, Trie-rakenteen hakutoiminnan kehitys, yksikkötestien kirjoittaminen |
 | 5 | 6 | Opetusdatan luova metodi toteutettu, yksikkötestien kirjoittaminen |
-| 6 | 10 | Musiikkia tuottavien luokkien toteuttaminen, testien kirjoittaminen |
-| Yht | 44 |  |
+| 6 | 22 | Musiikkia tuottavien luokkien toteuttaminen, testien kirjoittaminen |
+| Yht | 56 |  |

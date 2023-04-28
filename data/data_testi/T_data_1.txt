@@ -1,0 +1,4 @@
+"A"|:aabbccdd:|gegedged|aabbccdd|cdgcdgcd|
+"A"|:aabbccdd:|gegedged|aa"B"bbccdd|cdgcdgcd|
+"A"|:aabbccdd:|gegedged|aabbccdd|cdgcdg"C"cd|
+"A"|:aabbccdd:|gegedged|aab"D"bccdd|cdgcdgcd|
