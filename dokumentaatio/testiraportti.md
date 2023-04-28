@@ -11,7 +11,7 @@ Yksikkötestien lisäksi ohjelman virheiden etsinnässä on käytetty Pylintiä.
 
 Haaraumakattavuus (tilanne 28.4.2023) on 75 %
 
-![Testiraportti](https://github.com/vtonteri/Algoritmisovellus/tree/master/dokumentaatio/haaraumakattavuus.jpg)
+![haaraumakattavuus](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/haaraumakattavuus.jpg)
 
 ## **Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)**
 
