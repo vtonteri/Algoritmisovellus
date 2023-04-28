@@ -1,4 +1,4 @@
-from entities.trierakenne import TrieRakenne
+from src.entities.trierakenne import TrieRakenne
 
 class OpiDatasta:
     
@@ -13,3 +13,5 @@ class OpiDatasta:
             self.opetusdata.lisaa_nuotit(self.apulista)            
             self.apulista = []
         return self.opetusdata
+
+

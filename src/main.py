@@ -48,12 +48,13 @@ if __name__ == "__main__":
         savellaji = input(f"Anna sävellaji, tällä hetkellä jokin seuraavista {kansiot}. Painamalla x ohjelma lopettaa \n")
         
         if savellaji in kansiot:
-            tilojen_maara = int(input(f"Anna ennustamiseen käytettävien Markovin ketjujen tilojen määrä:\n"))
-            savellaji_muunnettu = LuoOpetusData().muunnos_abc_numeroksi[savellaji]
-            nuotit = [savellaji_muunnettu for i in range(tilojen_maara-1)]
-            main(savellaji, nuotit, tilojen_maara, oktaavi)
-            break
+            tilojen_maara = int(input(f"Anna ennustamiseen käytettävien Markovin ketjujen tilojen määrä (2-5):\n"))
+            if tilojen_maara >= 2 and tilojen_maara <= 5:
+                savellaji_muunnettu = LuoOpetusData().muunnos_abc_numeroksi[savellaji]
+                nuotit = [savellaji_muunnettu for i in range(tilojen_maara-1)]
+                main(savellaji, nuotit, tilojen_maara, oktaavi)
+                break
         elif savellaji == "X" or savellaji == "x":
             break
         else:
-            print("Anna kelvollinen sävellaji tai tilojen määrä (kokonaisluku)")
+            print("Anna kelvollinen sävellaji tai tilojen määrä (kokonaisluku väliltä 2 - 5)")

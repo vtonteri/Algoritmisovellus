@@ -20,7 +20,7 @@ class TeeUusiMidiTiedosto:
         self.bridge_nuotit = []
         self.aika = 196
         self.nopeus = 32
-        self.nuottien_maara = [1, 2, 4]
+        self.nuottien_maara = [1, 2]
 
     def luo_uusi_midi_tiedosto(self, savelet):
         """
@@ -200,20 +200,3 @@ class TeeUusiMidiTiedosto:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_5[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_5[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_5[nuotti]+7, velocity=self.nopeus, time = self.aika))
-"""
-        try: 
-            os.chdir(f"..\data\musiikki")
-            tulostiedostot = os.listdir(os.getcwd())
-        except OSError:
-            pass
-        try:
-            os.chdir(f"data/musiikki")
-            tulostiedostot = os.listdir(os.getcwd())
-        except FileNotFoundError:
-            print("Jotain meni vikaan.")
-
-        print(tulostiedostot)
-
-        kappaleen_numero = 0
-"""
-
