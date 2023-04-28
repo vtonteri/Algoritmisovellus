@@ -12,9 +12,7 @@ Ohjelma on testattu ja toiminta varmistettu Python 3.9.7 -versiolla. Aiempien ve
 
 **[Toteutusdokumentti](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/toteutusdokumentti.md)**
 
-**Testausdokumentti**
-
-**Tuntikirjanpito**
+**[Testidokumentti](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/testiraportti.md)**
 
 # **Viikkoraportit**
 
