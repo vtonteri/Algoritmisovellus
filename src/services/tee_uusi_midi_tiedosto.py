@@ -1,7 +1,5 @@
-from mido import MidiFile, MidiTrack, Message
 import random
-from random import randint
-import os
+from mido import MidiFile, MidiTrack, Message
 
 class TeeUusiMidiTiedosto:
     def __init__(self, oktaavi):
@@ -30,20 +28,20 @@ class TeeUusiMidiTiedosto:
         indeksi = 0
 
         for nuotti in savelet:
-            
+
             if indeksi <= 7:
                 for j in range(random.choice(self.nuottien_maara)):
                     self.sakeisto_nuotit.append(nuotti)
                 indeksi += 1
-            elif indeksi > 7 and indeksi <= 15:
+            elif 7 < indeksi <= 15:
                 for j in range(random.choice(self.nuottien_maara)):
                     self.kertosae_nuotit.append(nuotti)
                 indeksi += 1
-            elif indeksi > 15 and indeksi <= 23:
+            elif 15 < indeksi <= 23:
                 for j in range(random.choice(self.nuottien_maara)):
                     self.melodia_nuotit.append(nuotti)
                 indeksi += 1
-            elif indeksi > 23 and indeksi <= 31:
+            elif 23 < indeksi <= 31:
                 for j in range(random.choice(self.nuottien_maara)):
                     self.bridge_nuotit.append(nuotti)
                 indeksi += 1
@@ -58,78 +56,78 @@ class TeeUusiMidiTiedosto:
         self.kertosae()
         self.kertosae()
 
-        for i, track in enumerate(self.mid.tracks):
-            print(f'Track {i}: {track.name}')
-            for message in track:
-                print(message)
+        #for i, track in enumerate(self.mid.tracks):
+        #    print(f'Track {i}: {track.name}')
+        #    for message in track:
+        #        print(message)
 
 
         self.mid.save("uusi_kappale.mid")
-        print(f"Uusi tiedosto luotu onnistuneesti kansioon data/opetusdata/'valittu savellaji'")
+        print("Uusi tiedosto luotu onnistuneesti kansioon data/opetusdata/'valittu savellaji'")
 
 
     def sakeisto(self):
         for nuotti in self.sakeisto_nuotit:
-            
+
             if self.oktaavi == 0:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_0[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_0[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 11, note=self.muunnokset_0[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 1:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_1[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_1[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_1[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 2:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_2[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_2[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_2[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 3:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_3[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_3[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_3[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 4:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_4[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_4[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_4[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 5:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_5[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_5[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_5[nuotti]+7, velocity=self.nopeus, time = self.aika))
 
-    
+
     def kertosae(self):
         for nuotti in self.kertosae_nuotit:
-            
+
             if self.oktaavi == 0:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_0[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_0[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 11, note=self.muunnokset_0[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 1:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_1[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_1[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_1[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 2:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_2[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_2[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_2[nuotti]+7, velocity=self.nopeus, time = self.aika))
-           
+
             elif self.oktaavi == 3:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_3[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_3[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_3[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 4:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_4[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_4[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_4[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 5:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_5[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_5[nuotti]+4, velocity=self.nopeus, time = self.aika))
@@ -137,32 +135,32 @@ class TeeUusiMidiTiedosto:
 
     def bridge(self):
         for nuotti in self.bridge_nuotit:
-            
+
             if self.oktaavi == 0:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_0[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_0[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 11, note=self.muunnokset_0[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 1:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_1[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_1[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_1[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 2:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_2[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_2[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_2[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 3:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_3[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_3[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_3[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 4:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_4[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_4[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_4[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 5:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_5[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_5[nuotti]+4, velocity=self.nopeus, time = self.aika))
@@ -170,17 +168,17 @@ class TeeUusiMidiTiedosto:
 
     def melodia(self):
         for nuotti in self.melodia_nuotit:
-            
+
             if self.oktaavi == 0:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_0[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_0[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 11, note=self.muunnokset_0[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 1:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_1[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_1[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_1[nuotti]+7, velocity=self.nopeus, time = self.aika))
-            
+
             elif self.oktaavi == 2:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_2[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_2[nuotti]+4, velocity=self.nopeus, time = self.aika))

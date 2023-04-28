@@ -8,6 +8,7 @@ class TestTrierakenne(unittest.TestCase):
         self.lisattavat_nuotit_1 = [1, 2, 3, 4, 5, 6]
         self.lisattavat_nuotit_2 = [1, 2, 3, 5, 6, 2]
         self.lisattavat_nuotit_3 = [1, 2, 3, 6, 2, 3]
+        self.lisattavat_nuotit_4 = [1, 2]
         self.etsittavat_nuotit = ["1", "2", "3"]
         self.testi_rakenne = TrieSolmu()
         self.testi_rakenne.lapsi = {4:TrieSolmu()}
@@ -29,3 +30,12 @@ class TestTrierakenne(unittest.TestCase):
         self.testi_trierakenne.lisaa_nuotit(self.lisattavat_nuotit_3)
 
         self.assertEqual(TrieRakenne.maarita_painokertoimet(["1", "2", "3"], self.testi_trierakenne, "G"), {4: 0.3333333333333333, 5: 0.6666666666666666, 6: 1.0})
+
+    def test_etsi_nuotit_ei_ole(self):
+        self.testi_trierakenne.lisaa_nuotit(self.lisattavat_nuotit_1)
+        self.assertFalse(self.testi_trierakenne.etsi_nuotit(["1", "2", "7"]))
+
+    def test_maarita_painokertoimet_ei_loydy_enempaa(self):
+        self.testi_trierakenne.lisaa_nuotit(self.lisattavat_nuotit_4)
+        self.assertEqual(TrieRakenne.maarita_painokertoimet(["1", "2", "3"], self.testi_trierakenne, "G"), {11: 1.0})
+

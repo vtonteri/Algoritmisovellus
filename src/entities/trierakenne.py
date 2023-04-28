@@ -1,4 +1,3 @@
-from random import random
 from src.services.luo_opetusdata_abc import LuoOpetusData
 
 class TrieSolmu:
@@ -6,7 +5,7 @@ class TrieSolmu:
         self.lapsi = {}
         self.maara = 0
         self.on_viimeinen = False
-    
+
     def __str__(self):
         return f"{self.lapsi.keys()}, {self.maara}, {self.on_viimeinen}"
 
@@ -29,22 +28,21 @@ class TrieRakenne:
 
         for nuotti in etsittavat_nuotit:
             if int(nuotti) not in solmu.lapsi:
-                return False   
+                return False
             solmu = solmu.lapsi[int(nuotti)]
         return solmu
-    
+
     def maarita_painokertoimet(nuotit, rakenne, savellaji):
         vika = rakenne.etsi_nuotit(nuotit)
         summa = 0
         seuraava_nuotti = {}
-        if vika == False:
-                return {LuoOpetusData().muunnos_abc_numeroksi[savellaji]: 1.0}
-        else:
-            for key in vika.lapsi.keys():
-                summa += vika.lapsi[key].maara
-                seuraava_nuotti[key] = vika.lapsi[key].maara
-        y=0
+        if vika is False:
+            return {LuoOpetusData().muunnos_abc_numeroksi[savellaji]: 1.0}
+        for key in vika.lapsi.keys():
+            summa += vika.lapsi[key].maara
+            seuraava_nuotti[key] = vika.lapsi[key].maara
+        apusumma = 0
         for key in seuraava_nuotti.keys():
-            seuraava_nuotti[key] = y + seuraava_nuotti[key]/summa
-            y = seuraava_nuotti[key]
+            seuraava_nuotti[key] = apusumma + seuraava_nuotti[key]/summa
+            apusumma = seuraava_nuotti[key]
         return seuraava_nuotti

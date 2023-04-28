@@ -12,6 +12,7 @@ cowsay = "^5.0"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.3"
+pylint = "^2.17.3"
 
 [build-system]
 requires = ["poetry-core"]
