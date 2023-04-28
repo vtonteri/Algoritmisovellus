@@ -25,7 +25,7 @@ luo_opetusdata_abc -luokan kattavuus on raportissa 55 %. Tähän on syynä se et
 
 ## **Miten testit voidaan toistaa?**
 
-- Testit voidaan ajaa käyttäen seuraavaa komentoa poetryn avulla:
+Testit voidaan ajaa käyttäen seuraavaa komentoa poetryn avulla:
 
 `poetry run invoke test`
 
