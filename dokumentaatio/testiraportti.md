@@ -3,6 +3,7 @@
 ## **Yleistä**
 
 Ohjelmalle on kirjoitettu yksikkötestit seuraaville luokille:
+
 - TrieRakenne
 - LuoOpetusData
 - OpiDatasta
@@ -13,13 +14,23 @@ Haaraumakattavuus (tilanne 28.4.2023) on 75 %
 
 ![haaraumakattavuus](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/haaraumakattavuus.jpg)
 
-## **Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)**
+luo_opetusdata_abc -luokan kattavuus on raportissa 55 %. Tähän on syynä se että kyseisen luokan sisällä on luotu erillinen testaukseen suunniteltu metodi. Metodi hakee testidatan eri kansiosta, kuin oikean opetusdatan hakeva metodi. Oikean opetusdatan ja testausdatan noutavat metodit ovat muutoin samat, paitsi, että niissä on eri tiedostopolku.
+
+## **Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkeää)?**
+
+- Yksikkötestejä varten luotiin testidataa. Testidata oli osin yksinkertaista (alle kymmenen merkkiä sisältäviä listoja) tai pidempi abc-notaatiolla tehty kappale (noin 100 merkkiä)
+- Yksinkertaisten syötteiden avulla oli mahdollista testata ja todentaa luokkien ja metodien toiminta. Mikäli testidata olisi ollut kompleksista, olisi esimerkiksi painokertoimien määrittäminen ollut haastavaa
+- Yksinkertaiset syötteet testaavat kuitenkin metodien toimintaa, koska ne on valittu testitilanteisiin sopiviksi
 
 
-## **Suorituskyky- ja O-analyysivertailu (mikäli työ vertailupainotteinen)**
+## **Miten testit voidaan toistaa?**
 
+- Testit voidaan ajaa käyttäen seuraavaa komentoa poetryn avulla:
 
-## **Työn mahdolliset puutteet ja parannusehdotukset**
+`poetry run invoke test`
 
+Mikäli käyttäjällä on Windows-käyttöjärjestelmä, testit voidaan suorittaa seuraavalla komennolla:
 
-## **Lähteet**
+`pytest src`
+
+Ohjelman toiminnan empiirisen testauksen tulosten esittäminen graafisessa muodossa.
