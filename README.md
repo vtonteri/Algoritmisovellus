@@ -50,4 +50,4 @@ jonka jälkeen
 
 1. Ohjelma tuottaa opetusdatan perusteella toistettavan ja kuunneltavan midi-tiedoston. Tiedosto luodaan opetusdatana käytettyyn kansioon.
 
-2. Githubissa olevassa versiossa on kaksi ohjelman tuottamaa musiikkitiedostoa, molemmat opetusdata-kansioissa (G ja C)
+2. **[Esimerkkimusiikkia (algoritmin tuottamia)](https://github.com/vtonteri/Algoritmisovellus/tree/master/data/musiikki)**
