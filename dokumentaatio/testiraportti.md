@@ -10,7 +10,9 @@ Ohjelmalle on kirjoitettu yksikkötestit seuraaville luokille:
 
 Yksikkötestien lisäksi ohjelman virheiden etsinnässä on käytetty Pylintiä. Tällä hetkellä Pylint:n hyvyysarvo on 9.49 / 10 (tilanne 28.4.2023, .pylintrc on kopioitu Ohjelmistotekniikka-kurssin materiaalista ja sitä on hieman muokattu).
 
-Haaraumakattavuus (tilanne 28.4.2023) on 75 %
+Ohjelmasta on tarkoituksella jätetty pois LuoUusiMidiTiedosto-luokan testaus. Tämä on sovittu kurssin vastuuopettajan kanssa, sillä Midi-tiedoston luonti ei ole kurssin osaamistavoitteiden näkökulmasta keskeisessä roolissa.
+
+Haaraumakattavuus (tilanne 8.5.2023) on 61 %
 
 ![haaraumakattavuus](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/haaraumakattavuus.jpg)
 

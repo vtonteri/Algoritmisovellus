@@ -31,5 +31,5 @@ class LuoUusiKappale():
             self.nuotit.append(nuotti)
 
         self.savelet_abc_notaationa = LuoOpetusData().lue_ja_muunna_savel_data(self.uusi_kappale)
-        uusi_midi = TeeUusiMidiTiedosto(self.oktaavi)
+        uusi_midi = TeeUusiMidiTiedosto(self.oktaavi, 0, self.savellaji)
         uusi_midi.luo_uusi_midi_tiedosto(self.savelet_abc_notaationa)
