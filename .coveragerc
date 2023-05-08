@@ -1,0 +1,6 @@
+[run]
+source = src
+omit = src/**/__init__.py,src/tests/**,src/ui/**,src/main.py,src/services/tee_uusi_midi_tiedosto.py
+
+[report]
+omit = *__init__.py*

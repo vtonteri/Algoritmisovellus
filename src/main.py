@@ -36,18 +36,18 @@ if __name__ == "__main__":
     except FileNotFoundError:
         print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
     kansiot = [f for f in TIEDOSTOT_JA_KANSIOT if os.path.isdir(os.path.join(TIEDOSTO_POLKU, f))]
-    MIDIN_OKTAAVI = 2
+    MIDIN_OKTAAVI = 3
 
     while(True):
         savellaji = input(f"Anna sävellaji, tällä hetkellä jokin seuraavista {kansiot}. Painamalla x ohjelma lopettaa \n")
         if savellaji in kansiot:
-            tilojen_maara = int(input("Anna ennustamiseen käytettävien Markovin ketjujen tilojen määrä (2-5):\n"))
-            if 2 <= tilojen_maara <= 5:
+            tilojen_maara = int(input("Anna ennustamiseen käytettävien Markovin ketjujen tilojen määrä (2-6):\n"))
+            if 2 <= tilojen_maara <= 6:
                 savellaji_muunnettu = LuoOpetusData().muunnos_abc_numeroksi[savellaji]
-                nuotit = [savellaji_muunnettu for i in range(tilojen_maara-1)]
+                nuotit = [savellaji_muunnettu]
                 main(savellaji, nuotit, tilojen_maara, MIDIN_OKTAAVI)
                 break
         elif savellaji in ("X", "x"):
             break
         else:
-            print("Anna kelvollinen sävellaji tai tilojen määrä (kokonaisluku väliltä 2 - 5)")
+            print("Anna kelvollinen sävellaji tai tilojen määrä (kokonaisluku väliltä 2 - 6)")

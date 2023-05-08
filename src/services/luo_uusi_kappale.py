@@ -10,7 +10,8 @@ class LuoUusiKappale():
         self.data = LuoOpetusData()
         self.data.lue_ja_muunna_abc_data(savellaji)
         self.opetusdata = OpiDatasta()
-        self.opittu_data = self.opetusdata.opi(tilojen_maara, self.data.opetusdata_muunnettu)
+        self.tilojen_maara = tilojen_maara
+        self.opittu_data = self.opetusdata.opi(self.tilojen_maara, self.data.opetusdata_muunnettu)
         self.nuotit = nuotit
         self.savellaji = savellaji
         self.uusi_kappale = []
@@ -19,7 +20,6 @@ class LuoUusiKappale():
         self.oktaavi = oktaavi
 
     def luo_uusi_kappale(self):
-
         for i in range(100):
             seuraavat_mahdolliset_nuotit = TrieRakenne.maarita_painokertoimet(self.nuotit, self.opittu_data, self.savellaji)
             vertailu_kerroin = random.random()
@@ -27,9 +27,15 @@ class LuoUusiKappale():
                 if vertailu_kerroin <= painokerroin:
                     self.uusi_kappale.append(nuotti)
                     break
-            self.nuotit.pop(0)
-            self.nuotit.append(nuotti)
+
+            if len(self.nuotit) < self.tilojen_maara-1:
+                self.nuotit.append(nuotti)
+            
+            elif len(self.nuotit) == self.tilojen_maara-1:
+                self.nuotit.pop(0)
+                self.nuotit.append(nuotti)
+
 
         self.savelet_abc_notaationa = LuoOpetusData().lue_ja_muunna_savel_data(self.uusi_kappale)
-        uusi_midi = TeeUusiMidiTiedosto(self.oktaavi, 0, self.savellaji)
+        uusi_midi = TeeUusiMidiTiedosto(self.oktaavi, 0, self.savellaji, self.tilojen_maara)
         uusi_midi.luo_uusi_midi_tiedosto(self.savelet_abc_notaationa)

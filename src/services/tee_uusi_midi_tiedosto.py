@@ -2,7 +2,7 @@ import random
 from mido import MidiFile, MidiTrack, Message
 
 class TeeUusiMidiTiedosto:
-    def __init__(self, oktaavi, onko_yksikkotesti, savellaji):
+    def __init__(self, oktaavi, onko_yksikkotesti, savellaji, tilojen_maara):
         if onko_yksikkotesti == 0:
             self.testi = onko_yksikkotesti
         else:
@@ -24,6 +24,7 @@ class TeeUusiMidiTiedosto:
         self.nopeus = 32
         self.nuottien_maara = [1, 2]
         self.savellaji = savellaji
+        self.tilojen_maara = tilojen_maara
 
     def luo_uusi_midi_tiedosto(self, savelet):
         """
@@ -61,7 +62,7 @@ class TeeUusiMidiTiedosto:
             self.melodia()
             self.kertosae()
             self.kertosae()
-            self.mid.save(f"uusi_kappale_savellaji_{self.savellaji}_oktaavi_{self.oktaavi}.mid")
+            self.mid.save(f"uusi_kappale_savellaji_{self.savellaji}__Markov_ketjun_tiloja_{self.tilojen_maara-1}_kpl_oktaavi_{self.oktaavi}.mid")
             print(f"Uusi tiedosto luotu onnistuneesti kansioon data/opetusdata/{self.savellaji}")
         elif self.testi == 1:
             self.sakeisto()
@@ -70,11 +71,6 @@ class TeeUusiMidiTiedosto:
             self.melodia()
             return self.track
             
-        #for i, track in enumerate(self.mid.tracks):
-        #    print(f'Track {i}: {track.name}')
-        #    for message in track:
-        #        print(message)
-
     def sakeisto(self):
         for nuotti in self.sakeisto_nuotit:
 
@@ -107,7 +103,6 @@ class TeeUusiMidiTiedosto:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_5[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_5[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 11, note=self.muunnokset_5[nuotti]+7, velocity=self.nopeus, time = self.aika))
-
 
     def kertosae(self):
         for nuotti in self.kertosae_nuotit:
