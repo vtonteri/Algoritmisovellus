@@ -1,0 +1,4 @@
+(B/2c/2)|"^>"d3/2B/2A "^>"d3/2B/2A|(GFE) (F2F/2G/2)|A3/2B/2A .A.B.c|B3/2A/2G c2(B/2c/2)|
+"^>"d3/2B/2A "^>"d3/2B/2A|(GFE) (F2F/2G/2)|A3/2B/2A A Hdc|BAG c2||
+(B/2A/2)|G3/2A/2G (ED HC)|F3/2G/2A (FE HD)|.E.F.G .A.B.c|.B.A.G c2(B/2A/2)|
+G3/2A/2G ED HC|F3/2G/2A FE HD|.E.F.G .A Hdc|BAG c2|]

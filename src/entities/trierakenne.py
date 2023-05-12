@@ -1,6 +1,13 @@
 from src.services.luo_opetusdata_abc import LuoOpetusData
 
 class TrieSolmu:
+    """
+    Luokka luo olion TrieSolmu.
+    Solmu sisältää 
+    - solmuun liittyvät lapset dictionaryssa
+    - määrän, kuinka monta kertaa solmun läpi on lisätty nuotteja
+    - tiedon, onko solmu viimeinen
+    """
     def __init__(self):
         self.lapsi = {}
         self.maara = 0
@@ -10,10 +17,19 @@ class TrieSolmu:
         return f"{self.lapsi.keys()}, {self.maara}, {self.on_viimeinen}"
 
 class TrieRakenne:
+    """
+    Luokka luo Trie-tietorakenteen.
+    Luokkaa kutsuttaessa, se luo juuren (TrieSolmu), johon lisätään muut solmut
+    """
     def __init__(self):
         self.juuri = TrieSolmu()
 
     def lisaa_nuotit(self, nuotit: str):
+        """
+        Luokka lisää TrieRakenteeseen tietoa, eli uusia solmuja
+        Args: nuotit; voi olla joko lista tai merkkijono. Pituus on määritetty sen mukaan kuinka monella markovin ketjun tilalla halutaan musiikkia tehdä
+        Palauttaa tiedon, mikäli solmu on viimeinen
+        """
         solmu = self.juuri
         for nuotti in nuotit:
             if nuotti not in solmu.lapsi:
@@ -24,6 +40,11 @@ class TrieRakenne:
         return solmu.on_viimeinen
 
     def etsi_nuotit(self, etsittavat_nuotit: str):
+        """
+        Luokka etsii TrieRakenteesta nuotit
+        Args: nuotit; voi olla lista tai merkkijono
+        Palauttaa joko False (jos ei ole lapsia) tai solmun, mikäli ei ollut viimeinen (eli dict, määrä ja on.viimeinen)
+        """
         solmu = self.juuri
 
         for nuotti in etsittavat_nuotit:
@@ -33,6 +54,11 @@ class TrieRakenne:
         return solmu
 
     def maarita_painokertoimet(nuotit, rakenne, savellaji):
+        """
+        Luokka määrittää painokertoimet etsittäville nuoteille.
+        Args: etsittävät nuotit, tietorakenne ja sävellaji
+        Palauttaa dict, missä seuraavat nuotit ja painokertoimet. Mikäli viimeinen nuotti, niin palauttaa valitun sävellajin ja painokerroin 1.0
+        """
         vika = rakenne.etsi_nuotit(nuotit)
         summa = 0
         seuraava_nuotti = {}

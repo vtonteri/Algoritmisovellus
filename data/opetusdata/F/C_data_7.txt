@@ -1,0 +1,7 @@
+[d2e2]-|[e2e2]g2-g2e2|a3a (ag e2)|c4 +slide+[e4e4] |[M:3/2]a2ec- c2 +slide+[e2e2]- [e2e2]ed|
+[M:C|]cdcA cdcA|c2c2 AGEC-|C(_E- =E2-E)G E2|C6c2-|
+cdcA cdcA|c2c2 AGEC-|C(_E- =E2-E)G E2|C2A,2 CCD2-|
+E2G2-G2D2|A,4  D-E3|C8-|C2 z2 z2:||
+z2B,4- B,G,|A,8-|A,8|z2(_E=E -E)GA,2|C8|
+z2B,4- B,G,|A,8-|A,6(_E2|=E3)D A,C|C8|
+z2G,2A,-C3|{D}E2G4E2|A,4 E4|C8-C6||

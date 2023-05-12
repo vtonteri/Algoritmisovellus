@@ -1,0 +1,4 @@
+f | ec BA/B/ | cA F2 | EF AB | cB cf |
+ec BA/B/ | cA F2 | EF AB |cA A2 :|
+ce a2 | ce f2 | ce fa | ec BA |
+ce a2 | ce fa | ec BA/B/ | cA A2 :|

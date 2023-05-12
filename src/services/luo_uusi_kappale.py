@@ -6,6 +6,11 @@ from entities.trierakenne import TrieRakenne
 
 class LuoUusiKappale():
 
+    """
+    Luokka luo uuden kappaleen
+    Luokkaa kutsuttaessa luodaan opetusdata, opitaan datasta ja luodaan useita musiikin luomiseen liittyviä, tarpeellisia apulistoja.
+    """
+
     def __init__(self, savellaji, tilojen_maara, nuotit, oktaavi):
         self.data = LuoOpetusData()
         self.data.lue_ja_muunna_abc_data(savellaji)
@@ -20,6 +25,14 @@ class LuoUusiKappale():
         self.oktaavi = oktaavi
 
     def luo_uusi_kappale(self):
+        """
+        Metodi luo uuden kappaleen
+        for-loopin sisällä määritetään 100 eri nuottia kutsumalla maarita_painokertoimet -metodia.
+        vertailukertoimen avulla määritetään, mikä nuotti valitaan lisättäväksi uuden kappaleen sävelkiertoon.
+        Kappaleen luominen aloitetaan yhdestä nuotista, joka on valittu sävellaji.
+        Kun uuden kappaleen sävelkierto on määritetty, muunnetaan saadun kappaleen nuotit takaisin kirjaimiksi
+        Muunnoksen jälkeen luodaan uusi midi-tiedosto.
+        """
         for i in range(100):
             seuraavat_mahdolliset_nuotit = TrieRakenne.maarita_painokertoimet(self.nuotit, self.opittu_data, self.savellaji)
             vertailu_kerroin = random.random()
@@ -30,7 +43,7 @@ class LuoUusiKappale():
 
             if len(self.nuotit) < self.tilojen_maara-1:
                 self.nuotit.append(nuotti)
-            
+
             elif len(self.nuotit) == self.tilojen_maara-1:
                 self.nuotit.pop(0)
                 self.nuotit.append(nuotti)
