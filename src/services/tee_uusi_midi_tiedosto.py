@@ -28,7 +28,9 @@ class TeeUusiMidiTiedosto:
 
     def luo_uusi_midi_tiedosto(self, savelet):
         """
-        Tässä luodaan uusi kappale, käyttäen POP-kappaleiden kaavaa ABCABCDBB
+        Tässä luodaan uusi kappale, käyttäen POP-kappaleiden kaavaa ABCABCDBB (A = säkeistö, B = kertosäe, C = bridge, D = melodia)
+        Args: metodi ottaa luodun kappaleen sävelkierron ja lisää siitä self.nuottien_maara -listan mukaiset määrät säkeistöön, kertosäkeeseen, bridgeen ja melodiaan.
+        Kappale luodaan kutsumalla sakeisto, kertosae, bridge ja melodia -metodeita, jotka lisäävät nuotit midi-tiedostoon.
         """
         self.mid.tracks.append(self.track)
         indeksi = 0
@@ -73,6 +75,10 @@ class TeeUusiMidiTiedosto:
             return self.track
 
     def sakeisto(self):
+        """
+        Lisätään nuotit kappaleen säkeistöön.
+        Otetaan huomioon oktaavi ja luodaan myös kaksi lisänuottia musiikin elävöittämiseksi (+4 ja +7 sävelaskelta)
+        """
         for nuotti in self.sakeisto_nuotit:
 
             if self.oktaavi == 0:
@@ -106,6 +112,10 @@ class TeeUusiMidiTiedosto:
                 self.track.append(Message("note_on", channel = 11, note=self.muunnokset_5[nuotti]+7, velocity=self.nopeus, time = self.aika))
 
     def kertosae(self):
+        """
+        Lisätään nuotit kappaleen kertosäkeeseen.
+        Otetaan huomioon oktaavi ja luodaan myös kaksi lisänuottia musiikin elävöittämiseksi (+4 ja +7 sävelaskelta)
+        """
         for nuotti in self.kertosae_nuotit:
 
             if self.oktaavi == 0:
@@ -139,6 +149,10 @@ class TeeUusiMidiTiedosto:
                 self.track.append(Message("note_on", channel = 11, note=self.muunnokset_5[nuotti]+7, velocity=self.nopeus, time = self.aika))
 
     def bridge(self):
+        """
+        Lisätään nuotit kappaleen bridgeen.
+        Otetaan huomioon oktaavi ja luodaan myös kaksi lisänuottia musiikin elävöittämiseksi (+4 ja +7 sävelaskelta)
+        """
         for nuotti in self.bridge_nuotit:
 
             if self.oktaavi == 0:
@@ -170,7 +184,12 @@ class TeeUusiMidiTiedosto:
                 self.track.append(Message("note_on", channel = 10, note=self.muunnokset_5[nuotti], velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 15, note=self.muunnokset_5[nuotti]+4, velocity=self.nopeus, time = self.aika))
                 self.track.append(Message("note_on", channel = 11, note=self.muunnokset_5[nuotti]+7, velocity=self.nopeus, time = self.aika))
+
     def melodia(self):
+        """
+        Lisätään nuotit kappaleen melodiaan.
+        Otetaan huomioon oktaavi ja luodaan myös kaksi lisänuottia musiikin elävöittämiseksi (+4 ja +7 sävelaskelta)
+        """
         for nuotti in self.melodia_nuotit:
 
             if self.oktaavi == 0:
