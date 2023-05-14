@@ -39,10 +39,6 @@ Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
             - Luokka sisältää metodit
                 - luo_uusi_kappale
 
-        
-    - Sisältää opetusdatasta oppimiseen tarvittavat luokat ja metodit
-    - Sisältää opetusdatan perusteella luotavaan musiikkitiedostoon tarvittavat luokat ja metodit
-
 ## **Ohjelman toiminta pähkinänkuoressa**
 
 1. Main.py kysytään käyttäjän haluama sävellaji sekä Markovin ketjujen määrä. Tämän jälkeen
@@ -55,7 +51,6 @@ Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
 7. Sävelkierron luomisen jälkeen muunnetaan numerot takaisin nuoteiksi
 8. Tämän jälkeen kutsutaan TeeUusiMidiTiedosto -luokkaa
 9. TeeUusiMidiTiedosto-luokan metodin "luo_uusi_midi_tiedosto" kutsumisella luodaan ja tallennetaan uusi kappale 
-
 
 ## **Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)**
 
@@ -75,8 +70,6 @@ Työn puutteina voidaan mainita seuraavat asiat:
     - Opetusdata pitää manuaalisesti jaotella sävellajien mukaisiin kansioihin
 - Algoritmi luo kappaleen käytetyn sävellajin mukaiseen opetusdata-kansioon
     - Kappale pitää poistaa tai siirtää toiseen kansioon, jotta uuden kappaleen luonti samalla sävellajilla onnistuu
-
-
 
 ## **Lähteet**
 
