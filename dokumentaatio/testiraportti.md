@@ -18,7 +18,7 @@ Haaraumakattavuus on 70 %
 
 ![haaraumakattavuus](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/haaraumakattavuus.jpg)
 
-luo_opetusdata_abc -luokan kattavuus on raportissa 55 %. Tähän on syynä se että kyseisen luokan sisällä on luotu erillinen testaukseen suunniteltu metodi. Metodi hakee testidatan eri kansiosta, kuin oikean opetusdatan hakeva metodi. Oikean opetusdatan ja testausdatan noutavat metodit ovat muutoin samat, paitsi, että niissä on eri tiedostopolku.
+luo_opetusdata_abc -luokan kattavuus on raportissa 49 %. Tähän on syynä se että kyseisen luokan sisällä on luotu erillinen testaukseen suunniteltu metodi. Metodi hakee testidatan eri kansiosta, kuin oikean opetusdatan hakeva metodi. Oikean opetusdatan ja testausdatan noutavat metodit ovat muutoin samat, paitsi, että niissä on eri tiedostopolku.
 
 ## **Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkeää)?**
 
