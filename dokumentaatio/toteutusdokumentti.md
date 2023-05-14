@@ -35,9 +35,7 @@ Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
 
 ## **Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)**
 
-
-## **Suorituskyky- ja O-analyysivertailu (mikäli työ vertailupainotteinen)**
-
+Algoritmin aikavaativuus on O(n<sup>2</sup>)
 
 ## **Työn mahdolliset puutteet ja parannusehdotukset**
 
