@@ -60,6 +60,7 @@ Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
 ## **Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)**
 
 Algoritmin aikavaativuus määrittyy tietorakenteen luomisen ja sieltä tiedon haun perusteella. Trie-rakenteen tila- ja aikavaativuus on kirjallisuuden mukaan:
+
     - Tilavaativuus: O(n)
     - Aikavaativuus:
         - O(log(n))
