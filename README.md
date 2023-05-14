@@ -70,4 +70,4 @@ tai suoraan Sovellus-kansiossa, mikäli sovellus ei toimi:
 
 ## **Julkaisut:**
 
-3. **[Loppupalautus](https://github.com/vtonteri/Algoritmisovellus/releases/tag/v.1.1)**
+**[Loppupalautus](https://github.com/vtonteri/Algoritmisovellus/releases/tag/v.1.1)**
