@@ -33,6 +33,10 @@ Ohjelma on testattu ja toiminta varmistettu Python 3.9.7 -versiolla. Aiempien ve
 ## **Asennus ja käyttö**
 
 1. Lataa Githubin Release
+    - Release sisältää opetukseen tarvittavan datan
+        - Käytössä seuraavat sävellajit: A, C, G
+        - Kansioon F on kerätty kaikki opetusdata, jota voi myös testata
+        - Kansiossa B on yksikkötestien käyttämä testidata
 
 2. Asenna riippuvuudet komennolla:
 
