@@ -64,13 +64,14 @@ class TeeUusiMidiTiedosto:
             self.kertosae()
             self.mid.save(f"uusi_kappale_savellaji_{self.savellaji}__Markov_ketjun_tiloja_{self.tilojen_maara-1}_kpl_oktaavi_{self.oktaavi}.mid")
             print(f"Uusi tiedosto luotu onnistuneesti kansioon data/opetusdata/{self.savellaji}")
+
         elif self.testi == 1:
             self.sakeisto()
             self.kertosae()
             self.bridge()
             self.melodia()
             return self.track
-            
+
     def sakeisto(self):
         for nuotti in self.sakeisto_nuotit:
 

@@ -8,7 +8,7 @@ Ohjelmalle on kirjoitettu yksikkötestit seuraaville luokille:
 - LuoOpetusData
 - OpiDatasta
 
-Yksikkötestien lisäksi ohjelman virheiden etsinnässä on käytetty Pylintiä. Tällä hetkellä Pylint:n hyvyysarvo on 9.47 / 10 .pylintrc on kopioitu Ohjelmistotekniikka-kurssin materiaalista ja sitä on hieman muokattu. 
+Yksikkötestien lisäksi ohjelman virheiden etsinnässä on käytetty Pylintiä. Tällä hetkellä Pylint:n hyvyysarvo on 9.41 / 10 .pylintrc on kopioitu Ohjelmistotekniikka-kurssin materiaalista ja sitä on hieman muokattu. 
 
 Ohjelmasta on tarkoituksella jätetty pois LuoUusiMidiTiedosto- sekä LuoUusiKappale-luokan testaus. Tämä on sovittu kurssin vastuuopettajan kanssa, sillä Midi-tiedoston luonti ei ole kurssin osaamistavoitteiden näkökulmasta keskeisessä roolissa. 
 
@@ -25,7 +25,6 @@ luo_opetusdata_abc -luokan kattavuus on raportissa 55 %. Tähän on syynä se et
 - Yksikkötestejä varten luotiin testidataa. Testidata oli osin yksinkertaista (alle kymmenen merkkiä sisältäviä listoja) tai pidempi abc-notaatiolla tehty kappale (noin 100 merkkiä)
 - Yksinkertaisten syötteiden avulla oli mahdollista testata ja todentaa luokkien ja metodien toiminta. Mikäli testidata olisi ollut kompleksista, olisi esimerkiksi painokertoimien määrittäminen ollut haastavaa
 - Yksinkertaiset syötteet testaavat kuitenkin metodien toimintaa, koska ne on valittu testitilanteisiin sopiviksi
-
 
 ## **Miten testit voidaan toistaa?**
 

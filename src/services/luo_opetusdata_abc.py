@@ -15,37 +15,36 @@ class LuoOpetusData:
         self.muunnettu_savel_data = []
 
     def lue_ja_muunna_abc_testi_data(self):
-            """
-            Testiluokka, toteuttaa saman kuin lue_ja_muunna_abc, mutta käyttää pakotettuna testidataa.
-            Vain testien käytössä.
-            """
+        """
+        Testiluokka, toteuttaa saman kuin lue_ja_muunna_abc, mutta käyttää pakotettuna testidataa.
+        Vain testien käytössä.
+        """
 
+        try:
+            os.chdir(r"..\data\data_testi")
+            test_tiedostot = os.listdir(os.getcwd())
+        except FileNotFoundError:
+            pass
+        try:
+            os.chdir(r"data/data_testi")
+            test_tiedostot = os.listdir(os.getcwd())
+        except FileNotFoundError:
+            print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
+
+        for tiedosto in test_tiedostot:
             try:
-                os.chdir(r"..\data\data_testi")
-                test_tiedostot = os.listdir(os.getcwd())
-            except FileNotFoundError:
-                pass
-            try:
-                os.chdir(r"data/data_testi")
-                test_tiedostot = os.listdir(os.getcwd())
-            except FileNotFoundError:
+                with open(tiedosto, "r") as nuotit:
+                    tarkistusbitti = 0
+                    for rivi in nuotit:
+                        for nuotti in rivi:
+                            if nuotti == "\"":
+                                tarkistusbitti += 1
+                                if tarkistusbitti == 2:
+                                    tarkistusbitti = 0
+                            elif nuotti in self.muunnos_abc_numeroksi and tarkistusbitti == 0:
+                                self.opetusdata_muunnettu.append(self.muunnos_abc_numeroksi[nuotti])
+            except OSError:
                 print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
-
-            for tiedosto in test_tiedostot:
-                try:
-                    with open(tiedosto, "r") as nuotit:
-                        tarkistusbitti = 0
-                        for rivi in nuotit:
-                            for nuotti in rivi:
-                                if nuotti == "\"":
-                                    tarkistusbitti += 1
-                                    if tarkistusbitti == 2:
-                                        tarkistusbitti = 0
-                                elif nuotti in self.muunnos_abc_numeroksi and tarkistusbitti == 0:
-                                    self.opetusdata_muunnettu.append(self.muunnos_abc_numeroksi[nuotti])
-
-                except OSError:
-                    print("Ei löydetty tiedostoa, lisää opetusdataa kansioon tai vaihda sävellajia")
 
     def lue_ja_muunna_abc_data(self, savellaji: str):
 
@@ -93,6 +92,3 @@ class LuoOpetusData:
                 if i == value:
                     self.muunnettu_savel_data.append(key)
         return self.muunnettu_savel_data
-
-
-    

@@ -29,14 +29,14 @@ if __name__ == "__main__":
         if savellaji in kansiot:
             while True:
                 tilojen_maara = input("Anna ennustamiseen käytettävien Markovin ketjujen tilojen määrä (2-6) tai x, jolloin voit vaihtaa sävellajia:\n")
-                try: 
+                try:
                     if tilojen_maara in ("X", "x"):
                         print("Kappaletta ei luotu, seuraavaksi voit valita sävellajin uudelleen")
                         break
                     if 2 <= int(tilojen_maara) <= 6:
                         savellaji_muunnettu = LuoOpetusData().muunnos_abc_numeroksi[savellaji]
                         nuotit = [savellaji_muunnettu]
-                        main(savellaji, nuotit, tilojen_maara, MIDIN_OKTAAVI)
+                        main(savellaji, nuotit, int(tilojen_maara), MIDIN_OKTAAVI)
                         break
 
                 except:
