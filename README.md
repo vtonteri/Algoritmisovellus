@@ -54,6 +54,14 @@ tai suoraan Sovellus-kansiossa, mikäli sovellus ei toimi:
 
 `python src/main.py`
 
+4. Testien ajaminen onnistuu komennolla:
+
+`pytest src`
+
+5. Testiraportti saadaan komennolla:
+
+`coverage report -m`
+
 ## **Huomioita tämän hetken versiosta:**
 
 1. Ohjelma tuottaa opetusdatan perusteella toistettavan ja kuunneltavan midi-tiedoston. Tiedosto luodaan opetusdatana käytettyyn kansioon.
