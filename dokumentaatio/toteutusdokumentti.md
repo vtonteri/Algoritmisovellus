@@ -61,10 +61,10 @@ Ohjelma on jaettu toimintojensa osalta seuraaviin osakokonaisuuksiin:
 
 Algoritmin aikavaativuus määrittyy tietorakenteen luomisen ja sieltä tiedon haun perusteella. Trie-rakenteen tila- ja aikavaativuus on kirjallisuuden mukaan:
 
-    - Tilavaativuus: O(n)
-    - Aikavaativuus:
-        - O(log(n))
-            - Lisääminen, poistaminen ja tiedon haku
+- Tilavaativuus: O(n)
+- Aikavaativuus:
+    - O(log(n))
+        - Lisääminen, poistaminen ja tiedon haku
 
 ## **Työn mahdolliset puutteet ja parannusehdotukset**
 
