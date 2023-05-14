@@ -68,4 +68,4 @@ tai suoraan Sovellus-kansiossa, mikäli sovellus ei toimi:
 
 2. **[Esimerkkimusiikkia (algoritmin tuottamia)](https://github.com/vtonteri/Algoritmisovellus/tree/master/data/musiikki)**
 
-3. **[Loppupalautus](https://github.com/vtonteri/Algoritmisovellus/releases/tag/v.1.0)**
+3. **[Loppupalautus](https://github.com/vtonteri/Algoritmisovellus/releases/tag/v.1.1)**
