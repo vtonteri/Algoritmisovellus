@@ -50,6 +50,10 @@ jonka jälkeen
 
 `python main.py`
 
+tai suoraan Sovellus-kansiossa, mikäli sovellus ei toimi:
+
+`python src/main.py`
+
 ## **Huomioita tämän hetken versiosta:**
 
 1. Ohjelma tuottaa opetusdatan perusteella toistettavan ja kuunneltavan midi-tiedoston. Tiedosto luodaan opetusdatana käytettyyn kansioon.
