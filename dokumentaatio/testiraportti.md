@@ -12,7 +12,7 @@ Yksikkötestien lisäksi ohjelman virheiden etsinnässä on käytetty Pylintiä.
 
 Ohjelmasta on tarkoituksella jätetty pois LuoUusiMidiTiedosto- sekä LuoUusiKappale-luokan testaus. Tämä on sovittu kurssin vastuuopettajan kanssa, sillä Midi-tiedoston luonti ei ole kurssin osaamistavoitteiden näkökulmasta keskeisessä roolissa. 
 
-Testauksessa on keskitytty opetusdatan luonnin ja Trie-rakenteen oikeellisuuden ja toiminnan varmistamiseen.
+**Testauksessa on keskitytty opetusdatan luonnin ja Trie-rakenteen oikeellisuuden ja toiminnan varmistamiseen.**
 
 Haaraumakattavuus on 74 %
 

@@ -7,7 +7,8 @@
 - Tässä vaiheessa olen suunnitellut, että ohjelma saa syötteenä ASCII-merkkeinä kappaleiden soinnut, joiden perusteella se muodostaa koneoppimisen mallit. Tarkastelen mahdollisuutta (jos ei ole liian vaikea toteuttaa) antaa syötteet MIDI-tiedostoina
 
 - Tavoitteena olevat aika- ja tilavaativuudet (m.m. O-analyysit)
-    - Tähän en pysty vielä tässä vaiheessa ottamaan kantaa
+    - Trie-rakenteen aikavaativuus O(log(n))
+    - Trie-rakenteen tilavaativuus O(n)
 
 - Käytetyt lähteet (tässä vaiheessa tehty alustava kartoitus Helkasta materiaalista, joka saattaisi olla hyödyllistä, lista tarkentuu):
     - Introduction to algorithms, Third edition
