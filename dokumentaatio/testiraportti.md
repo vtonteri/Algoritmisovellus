@@ -14,7 +14,7 @@ Ohjelmasta on tarkoituksella jätetty pois LuoUusiMidiTiedosto- sekä LuoUusiKap
 
 **Testauksessa on keskitytty opetusdatan luonnin ja Trie-rakenteen oikeellisuuden ja toiminnan varmistamiseen.**
 
-Haaraumakattavuus on 74 %
+Haaraumakattavuus on 70 %
 
 ![haaraumakattavuus](https://github.com/vtonteri/Algoritmisovellus/blob/master/dokumentaatio/haaraumakattavuus.jpg)
 
